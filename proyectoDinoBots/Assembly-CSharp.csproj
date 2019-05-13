@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\ejeZ\scripts\movimientoZ.cs" />
     <None Include="Assets\ejeZ\Knight Files\Read Me.txt" />
+    <None Include="Assets\ejeZ\shaders\shad1.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/larg/Desktop/proyectogithubdinobots/mtdm/proyectoDinoBots/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

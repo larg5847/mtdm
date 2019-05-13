@@ -6,13 +6,19 @@ public class movimientoZ : MonoBehaviour
 {
 
     float velocidad = 2.0f;
-
+    public Animator controlAnim;
+    SpriteRenderer tSprite;
     Transform posicion;
     Vector3 mov = new Vector3(0.0f,0.0f,0.0f);
+
+
+    bool attacking = false;
+    float movement = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
         posicion = this.transform;
+        tSprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -20,19 +26,45 @@ public class movimientoZ : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.W))
         {
-            posicion.transform.position = new Vector3(this.transform.position.x, (this.transform.position.y + velocidad * Time.deltaTime), (this.transform.position.z + velocidad * Time.deltaTime));
+            movement = Mathf.Abs(Input.GetAxisRaw("Vertical") * velocidad);
+            posicion.transform.position = new Vector3(this.transform.position.x, (this.transform.position.y + velocidad * Time.deltaTime), 0);
+            controlAnim.SetFloat("speed", movement);
         }
-        if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S))
         {
-            posicion.transform.position = new Vector3(this.transform.position.x, (this.transform.position.y - velocidad * Time.deltaTime), (this.transform.position.z - velocidad * Time.deltaTime));
+            movement = Mathf.Abs(Input.GetAxisRaw("Vertical") * velocidad);
+            posicion.transform.position = new Vector3(this.transform.position.x, (this.transform.position.y - velocidad * Time.deltaTime), 0);
+            controlAnim.SetFloat("speed", movement);
         }
-        if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A))
         {
-            posicion.transform.position = new Vector3(this.transform.position.x - velocidad * Time.deltaTime , this.transform.position.y , this.transform.position.z);
+            movement = Mathf.Abs(Input.GetAxisRaw("Horizontal") * velocidad);
+            tSprite.flipX = true;
+            posicion.transform.position = new Vector3(this.transform.position.x - velocidad * Time.deltaTime , this.transform.position.y , 0);
+            controlAnim.SetFloat("speed", movement);
         }
-        if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D))
         {
-            posicion.transform.position = new Vector3(this.transform.position.x + velocidad * Time.deltaTime, this.transform.position.y , this.transform.position.z);
+            movement = Mathf.Abs(Input.GetAxisRaw("Horizontal") * velocidad);
+            tSprite.flipX = false;
+            posicion.transform.position = new Vector3(this.transform.position.x + velocidad * Time.deltaTime, this.transform.position.y , 0);
+            controlAnim.SetFloat("speed", movement);
         }
+        else
+        {
+            controlAnim.SetFloat("speed", 0.0f);
+        }
+
+       if (Input.GetKey(KeyCode.Space))
+        {
+            attacking = true;
+            controlAnim.SetBool("atack", attacking);
+        }
+        else
+        {
+            attacking = false;
+            controlAnim.SetBool("atack", attacking);
+        }
+
     }
 }
