@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 875239747120292958}
   - component: {fileID: 875239747120292957}
   - component: {fileID: 5768740421322513246}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HorizontalWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   m_Component:
   - component: {fileID: 875239747877994887}
   - component: {fileID: 875239747877994880}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LevelElements_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

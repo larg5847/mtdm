@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 607790538096547713}
   - component: {fileID: 607790538096547714}
   - component: {fileID: 1605956855}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: VerticalWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   m_Component:
   - component: {fileID: 607790538625759003}
   - component: {fileID: 607790538625759002}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LevelElements_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
