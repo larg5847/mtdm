@@ -60,7 +60,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ejeZ\scripts\hurtEnem.cs" />
     <Compile Include="Assets\ejeZ\scripts\movimientoZ.cs" />
+    <Compile Include="Assets\experimentos\particulasEjemplo.cs" />
     <None Include="Assets\ejeZ\Knight Files\Read Me.txt" />
     <None Include="Assets\ejeZ\shaders\shad1.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">

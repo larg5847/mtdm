@@ -1,4 +1,4 @@
 sceneSetups:
-- path: C:/Users/larg/Desktop/tallerP modificados/Proyecto haku/HAKU - GAME PROJECT/Assets/Escenas/Menu.unity
+- path: Assets/ejeZ/scene/escenaTiles.unity
   isLoaded: 1
   isActive: 1
