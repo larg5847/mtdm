@@ -39,14 +39,17 @@ public class movimientoZ : MonoBehaviour
         else if (Input.GetKey(KeyCode.A))
         {
             movement = Mathf.Abs(Input.GetAxisRaw("Horizontal") * velocidad);
-            tSprite.flipX = true;
+
+            //se necesita esta linea a negativo paara que se conserven los hitboxes en animacion
+            posicion.transform.localScale = new Vector3(-1, 1, 1);
+            //movimiento
             posicion.transform.position = new Vector3(this.transform.position.x - velocidad * Time.deltaTime , this.transform.position.y , 0);
             controlAnim.SetFloat("speed", movement);
         }
         else if (Input.GetKey(KeyCode.D))
         {
             movement = Mathf.Abs(Input.GetAxisRaw("Horizontal") * velocidad);
-            tSprite.flipX = false;
+            posicion.transform.localScale = new Vector3(1, 1, 1);
             posicion.transform.position = new Vector3(this.transform.position.x + velocidad * Time.deltaTime, this.transform.position.y , 0);
             controlAnim.SetFloat("speed", movement);
         }
