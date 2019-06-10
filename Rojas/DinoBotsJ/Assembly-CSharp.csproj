@@ -54,8 +54,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\IA\Grid.cs" />
+     <Compile Include="Assets\IA\Heap.cs" />
      <Compile Include="Assets\IA\Node.cs" />
      <Compile Include="Assets\IA\Pathfinding.cs" />
+     <Compile Include="Assets\IA\PathRequestManager.cs" />
+     <Compile Include="Assets\IA\Unit.cs" />
      <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
      <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
      <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
