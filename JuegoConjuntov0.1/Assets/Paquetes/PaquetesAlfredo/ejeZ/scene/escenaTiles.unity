@@ -176,7 +176,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3366e934289a296419ff3f9fc89acace, type: 2}
+  - {fileID: 2100000, guid: 3ef8efe53d5a37640a8e2f34304fde6e, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -472,7 +472,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4888,7 +4888,7 @@ SpriteRenderer:
   m_Size: {x: 10, y: 3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &590048713
@@ -4963,6 +4963,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3005631714757948463}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1068000148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068000144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3cb7f88429fc0d49ae8907a5a001310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1102776186
 GameObject:
   m_ObjectHideFlags: 0
