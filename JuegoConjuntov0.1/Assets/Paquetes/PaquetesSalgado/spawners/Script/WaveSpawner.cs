@@ -4,130 +4,55 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
-    public enum SpawnState {SPAWNING, WAITING, COUNTING};
-
-    [System.Serializable]
-    public class Wave
-    {
-        public string nombre;
-        public Transform enemigo;
-        public int contador;
-        public float rate;
-    }
-
-    public Wave[] oleada;
-    private int siguienteOleada = 0;
-
-    //Puntos donde aparecen oleadas 
-    public Transform[] spawnPoints;
-
-    public float tiempoEntreOleadas = 5f;
-    public float cuentaRegresiva = 0;
-
-    public float buscarCuentaRegresiva = 1f;
-
-    private SpawnState estado = SpawnState.COUNTING;
+    public GameObject enemigo;
+    public int enemigoPoolSize = 5;
+    public float spawnRate = 3f;
     
-    private void Start()
+    //Colección de enemigos
+    private GameObject[] enemigos;
+    //Índice de enemigo actual
+    private int j = 0;
+
+    //Posición para enemigo que no aparece en pantalla
+    private Vector2 objectPoolPosition = new Vector2(-15, -25);
+    private float spawnXPosition = 1f;
+
+    //Tiempo desde la última aparición
+    private float tiempo;
+
+
+    void Start()
     {
-        if (spawnPoints.Length == 0)
+        tiempo = 0f;
+
+        //Inicializa colleción de enemigos
+        enemigos = new GameObject[enemigoPoolSize];
+         
+        for (int i = 0; i < enemigoPoolSize; i++)
         {
-            Debug.LogError("No spawn points referenced.");
-        }
-
-        cuentaRegresiva = tiempoEntreOleadas;
-    }
-
-    private void Update()
-    {
-        if (estado == SpawnState.WAITING)
-        {
-            if (!enemyIsAlive())
-            {
-                waveCompleted();
-            }
-
-            else
-                return;
-        }
-
-        if (cuentaRegresiva<=0)
-        {
-            if (estado != SpawnState.SPAWNING)
-            {
-                //Aparición de enemigos
-                StartCoroutine(SpawnWave(oleada[siguienteOleada]));
-            }
-        }
-
-        else
-        {
-            cuentaRegresiva -= Time.deltaTime;
+            enemigos[i] = (GameObject)Instantiate(enemigo, objectPoolPosition, Quaternion.identity);
         }
     }
 
-    bool enemyIsAlive()
+    //Aparición de enemigos hasta que el juego no se haya terminado
+    void Update()
     {
-        buscarCuentaRegresiva -= Time.deltaTime;
+        tiempo += Time.deltaTime;
 
-        if (buscarCuentaRegresiva <= 0f)
+        if (tiempo >= spawnRate)
         {
-            buscarCuentaRegresiva = 1f;
+            tiempo = 0f;
 
-            if (GameObject.FindGameObjectWithTag("Enemigo") == null)
+            float spawnYPosition = Random.Range(-5, 5);
+
+            enemigos[j].transform.position = new Vector2(spawnXPosition, spawnYPosition);
+
+            j++;
+
+            if (j >= enemigoPoolSize)
             {
-                return false;
+                j = 0;
             }
         }
-
-
-        return true;
     }
-
-    void waveCompleted()
-    {
-        Debug.Log("Oleada completada!");
-
-        estado = SpawnState.COUNTING;
-
-        cuentaRegresiva = tiempoEntreOleadas;
-
-        if (siguienteOleada + 1 > oleada.Length - 1)
-        {
-            siguienteOleada = 0;
-
-            Debug.Log("All waves complete! Looping...");
-        }
-
-        else
-        {
-            siguienteOleada++;
-        }
-    }
-
-    IEnumerator SpawnWave(Wave _oleada)
-    {
-        Debug.Log("Spawing wave: " + _oleada.nombre);
-        estado = SpawnState.SPAWNING;
-
-        for (int i = 0; i <= _oleada.contador ; i++)
-        {
-            SpawnEnemy(_oleada.enemigo);
-            yield return new WaitForSeconds(1f / _oleada.rate);
-        }
-
-        estado = SpawnState.WAITING;
-
-        yield break;
-    }
-
-    void SpawnEnemy(Transform _enemigo)
-    {
-        Debug.Log("Spawning Enemy: " + _enemigo.name);
-
-        Transform _sp = spawnPoints[Random.Range(0,spawnPoints.Length)];
-
-        Instantiate(_enemigo, _sp.position, _sp.rotation);
-    }
-
 }
