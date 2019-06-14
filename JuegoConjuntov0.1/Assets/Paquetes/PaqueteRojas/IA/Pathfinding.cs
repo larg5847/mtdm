@@ -6,21 +6,24 @@ using UnityEngine;
 
 public class Pathfinding : MonoBehaviour {
 
-    public bool debug;
+    public bool debug;                          // PAra debugging del tiempo
 
-    private PathRequestManager requestManager;
-    private Grid grid;
-    private Stopwatch sw;
+    private PathRequestManager requestManager;  // Manager para encontrar los caminos
+    private Grid grid;                          // Malla con los nodos del A*
+    private Stopwatch sw;                       // Reloj para medir el tiempo cuando esta en modo debug
 
     void Awake() {
         grid = this.GetComponent<Grid>();
         requestManager = this.GetComponent<PathRequestManager>();
     }
 
+    // Empieza una que encuentra el camino mas corto
     public void StartFindPath(Vector2 startPos, Vector2 targetPos) {
         StartCoroutine(FindPath(startPos, targetPos));
     }
 
+    // Corutina para encontrar el camino
+    // Este codigo es la implementacion del algoritmo A*
     IEnumerator FindPath(Vector2 startPos, Vector2 targetPos) {
         if(debug) {
             sw = new Stopwatch();
