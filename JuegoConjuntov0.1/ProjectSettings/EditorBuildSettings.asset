@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Paquetes/PaquetesAlfredo/ejeZ/scene/escenaTiles.unity
+    guid: 06c9bf2e7c6f55f4393d647cc1114ead
   m_configObjects: {}

@@ -6,14 +6,21 @@ public class movimientoZ : MonoBehaviour
 {
 
     float velocidad = 2.0f;
+
+
     public Animator controlAnim;
+    public Joystick joystick;
+    public Rigidbody2D rb;
+    public Vector3 inputJoystick;
+
     SpriteRenderer tSprite;
     Transform posicion;
     Vector3 mov = new Vector3(0.0f,0.0f,0.0f);
 
-
-    bool attacking = false;
-    float movement = 0.0f;
+    public bool attacking = false;
+    
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +31,35 @@ public class movimientoZ : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        inputJoystick = new Vector3(joystick.Horizontal, joystick.Vertical, 0);
+        inputJoystick *= velocidad;
+
+        rb.velocity = new Vector2(inputJoystick.x, inputJoystick.y);
+        controlAnim.SetFloat("speed", Mathf.Abs(rb.velocity.magnitude));
+
+        if (rb.velocity.x > 0) {
+            transform.localScale = new Vector3(1, 1, 1);
+            //controlAnim.SetFloat("speed", inputJoystick.x);
+        } else if(rb.velocity.x < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+            //controlAnim.SetFloat("speed", inputJoystick.x);
+        }
+
+        /*el ataque se activa desde el boton del canvas por medio de un ONCLICK() haciendo que se active la funcion para poner el positivo 
+        el ataque, al finalizarlo, se pasa a negativo y al volver al siguiente fotograma ya no entra mas que a acabar la animacion*/
+        if (attacking == true)
+        {
+            //attacking = true;
+            controlAnim.SetBool("atack", attacking);
+            attacking = false;
+        }
+        else
+        {
+            controlAnim.SetBool("atack", attacking);
+        }
+
+        /*
         if(Input.GetKey(KeyCode.W))
         {
             movement = Mathf.Abs(Input.GetAxisRaw("Vertical") * velocidad);
@@ -57,17 +93,12 @@ public class movimientoZ : MonoBehaviour
         {
             controlAnim.SetFloat("speed", 0.0f);
         }
+        */
+    }
 
-       if (Input.GetKey(KeyCode.Space))
-        {
-            attacking = true;
-            controlAnim.SetBool("atack", attacking);
-        }
-        else
-        {
-            attacking = false;
-            controlAnim.SetBool("atack", attacking);
-        }
-
+    public void activarAtt()
+    {
+        attacking = true;
+        //controlAnim.SetBool("atack", attacking);
     }
 }
