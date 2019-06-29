@@ -79,10 +79,13 @@
     <Compile Include="Assets\Paquetes\PaquetesRojas\Joystick\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\Paquetes\PaquetesSalgado\powerUps\Scripts\controlPlayer.cs" />
     <Compile Include="Assets\Paquetes\PaquetesSalgado\powerUps\Scripts\powerUp.cs" />
+    <Compile Include="Assets\Paquetes\PaquetesSalgado\spawners\Script\Proyectil.cs" />
     <Compile Include="Assets\Paquetes\PaquetesSalgado\spawners\Script\WaveSpawner.cs" />
+    <Compile Include="Assets\Paquetes\PaquetesSalgado\spawners\Script\Weapon.cs" />
     <Compile Include="Assets\scripts\comportEnem.cs" />
     <Compile Include="Assets\scripts\DragMe.cs" />
     <Compile Include="Assets\scripts\joystick1.cs" />
+    <None Include="Assets\Paquetes\PaquetesAlfredo\ejeZ\ProjectSettings\ProjectVersion.txt" />
     <None Include="Assets\Paquetes\PaquetesAlfredo\ejeZ\Knight Files\Read Me.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/larg/Desktop/proyectogithubdinobots/mtdm/JuegoConjuntov0.1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
