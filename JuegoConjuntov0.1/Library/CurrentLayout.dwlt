@@ -111,8 +111,8 @@ MonoBehaviour:
     y: 30
     width: 1904
     height: 931
-  m_MinSize: {x: 817, y: 498}
-  m_MaxSize: {x: 22012, y: 14048}
+  m_MinSize: {x: 807, y: 498}
+  m_MaxSize: {x: 22002, y: 14048}
   vertical: 0
   controlID: 130
 --- !u!114 &6
@@ -136,8 +136,8 @@ MonoBehaviour:
     y: 0
     width: 1513
     height: 931
-  m_MinSize: {x: 540, y: 498}
-  m_MaxSize: {x: 18010, y: 14048}
+  m_MinSize: {x: 532, y: 498}
+  m_MaxSize: {x: 18002, y: 14048}
   vertical: 1
   controlID: 131
 --- !u!114 &7
@@ -242,8 +242,8 @@ MonoBehaviour:
     y: 575
     width: 1513
     height: 356
-  m_MinSize: {x: 540, y: 274}
-  m_MaxSize: {x: 18010, y: 10024}
+  m_MinSize: {x: 532, y: 274}
+  m_MaxSize: {x: 18002, y: 10024}
   vertical: 0
   controlID: 132
 --- !u!114 &11
@@ -343,8 +343,8 @@ MonoBehaviour:
     y: 0
     width: 391
     height: 931
-  m_MinSize: {x: 277, y: 74}
-  m_MaxSize: {x: 4002, y: 4024}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 23}
   m_Panes:
   - {fileID: 23}
@@ -518,9 +518,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 16.45649, y: 2.8180664, z: -0.14201055}
+    m_Target: {x: 1.6561046, y: -1.3992202, z: -0.99314153}
     speed: 2
-    m_Value: {x: 16.45649, y: 2.8180664, z: -0.14201055}
+    m_Value: {x: 1.6561046, y: -1.3992202, z: -0.99314153}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -552,9 +552,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 18.774033
+    m_Target: 15.770793
     speed: 2
-    m_Value: 18.774033
+    m_Value: 15.770793
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -658,7 +658,7 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 13012
+  m_LastSelectedObjectID: 11162
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -777,7 +777,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 11}
+      m_ClientGUIView: {fileID: 0}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}

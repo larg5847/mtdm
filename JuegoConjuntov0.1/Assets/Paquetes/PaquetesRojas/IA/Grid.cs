@@ -166,11 +166,11 @@ public class Grid : MonoBehaviour
         if (grid != null && displayGridGizmos)
         {
             foreach (Node node in grid) {
-                Gizmos.color = Color.Lerp(new Color(1, 1, 1, 0.4f), new Color(0, 0, 0, 0.4f), Mathf.InverseLerp(penaltyMin, penaltyMax, node.movementPenalty));
+                //Gizmos.color = Color.Lerp(new Color(1, 1, 1, 0.4f), new Color(0, 0, 0, 0.4f), Mathf.InverseLerp(penaltyMin, penaltyMax, node.movementPenalty));
+                //Gizmos.color = node.walkable ? Gizmos.color : new Color(1, 0, 0, 0.4f);
+                Gizmos.color = node.walkable ? new Color(1, 1, 1, 0.1f) : new Color(1, 0, 0, 0.4f);
 
-                Gizmos.color = node.walkable ? Gizmos.color : new Color(1, 0, 0, 0.4f);
-
-                //Gizmos.DrawWireCube(node.worldPosition, Vector3.one * (nodeDiameter));
+                Gizmos.DrawWireCube(node.worldPosition, Vector3.one * (nodeDiameter));
                 Gizmos.DrawCube(node.worldPosition, Vector3.one * (nodeDiameter));
             }
         }
