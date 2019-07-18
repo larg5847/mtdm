@@ -81,9 +81,12 @@
     <Compile Include="Assets\Paquetes\PaquetesRojas\Joystick\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\Paquetes\PaquetesSalgado\powerUps\Scripts\controlPlayer.cs" />
     <Compile Include="Assets\Paquetes\PaquetesSalgado\powerUps\Scripts\powerUp.cs" />
-    <Compile Include="Assets\Paquetes\PaquetesSalgado\Spawners\Scripts\Proyectil.cs" />
+    <Compile Include="Assets\Paquetes\PaquetesSalgado\Proyectiles\Scripts\DestruyeProyectil.cs" />
+    <Compile Include="Assets\Paquetes\PaquetesSalgado\Proyectiles\Scripts\hurtProyectil.cs" />
+    <Compile Include="Assets\Paquetes\PaquetesSalgado\Proyectiles\Scripts\LanzaProyectil.cs" />
+    <Compile Include="Assets\Paquetes\PaquetesSalgado\Proyectiles\Scripts\Proyectil.cs" />
+    <Compile Include="Assets\Paquetes\PaquetesSalgado\Spawners\Scripts\MovimientoPlayer.cs" />
     <Compile Include="Assets\Paquetes\PaquetesSalgado\Spawners\Scripts\WaveSpawner.cs" />
-    <Compile Include="Assets\Paquetes\PaquetesSalgado\Spawners\Scripts\Weapon.cs" />
     <Compile Include="Assets\scripts\comportEnem.cs" />
     <Compile Include="Assets\scripts\DragMe.cs" />
     <Compile Include="Assets\scripts\joystick1.cs" />
@@ -301,9 +304,6 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.11f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>D:/Documents/GitHub/dinosVsbots/JuegoConjuntov0.1/Library/PackageCache/com.unity.ads@2.0.8/UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Analytics.Editor">
       <HintPath>D:/Documents/GitHub/dinosVsbots/JuegoConjuntov0.1/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
@@ -312,9 +312,6 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>D:/Documents/GitHub/dinosVsbots/JuegoConjuntov0.1/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Purchasing">
-      <HintPath>D:/Documents/GitHub/dinosVsbots/JuegoConjuntov0.1/Library/PackageCache/com.unity.purchasing@2.0.3/UnityEngine.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.11f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

@@ -4,151 +4,70 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
-    //Variables para control de movimiento//
-    private float velocidad = 2.0f;
-    Transform posicion;
-    Vector3 mov = new Vector3(0.0f, 0.0f, 0.0f);
-    private float movement = 0.0f;
-
-    private bool facinRight = true;
-    private bool facinLeft = false;
-
-    //Variables para hacer pool de objetos//
-    public GameObject enemigo;
-    public int enemigoPoolSize = 5;
-    public float spawnRate = 10f;
-
-    //Colección de enemigos
-    private GameObject[] enemigos;
-    //Índice de enemigo actual
-    private int j = 0;
-    //ïndice de oleadas
-    public int k = 2;
-
+    //Tiempo de aparición entre enemigos
+    public float spawnRate = 2f;
+    //Objeto para hacer el pool
+    public GameObject enemy;
+    //Lista de objetos
+    List<GameObject> enemies;
+    //Tamaño de lista de pool
+    public int poolTam = 5;
     //Posición para enemigo que no aparece en pantalla
     private Vector2 objectPoolPosition = new Vector2(-15, -25);
     private float spawnXPosition = 1.0f;
-
-    //Tiempo desde la última aparición
-    public float tiempo;
-
+    //Tiempo desde la última aparición del enemigo
+    public float tiempo = 0f;
+    //Índice de enemigo
+    public int j = 0;
+    //ïndice de oleadas
+    public int k = 2;
     //Total de objetos en escena
-    public GameObject[] totalEnemigos;
+    public GameObject[] tEnemigos;
 
+    // Start is called before the first frame update
     void Start()
     {
-        posicion = this.transform;
+        enemies = new List<GameObject>();
 
-        tiempo = 0f;
-
-        //Inicializa colección de enemigos
-        enemigos = new GameObject[enemigoPoolSize];
-
-        for (int i = 0; i < enemigoPoolSize; i++)
+        //Creación de la lista de objetos
+        for (int i = 0; i < poolTam; i++)
         {
-            Debug.Log("Counting");
-            enemigos[i] = (GameObject)Instantiate(enemigo, objectPoolPosition, Quaternion.identity);
+            GameObject obj = (GameObject)Instantiate(enemy);
+            obj.SetActive(false);
+            enemies.Add(obj);
         }
     }
 
-    
+    // Update is called once per frame
     void Update()
-    {
-        movimiento();
-        enemyPooling();
-
-        if (k == 0)
-        {
-            Debug.Log("Next level");
-        }
-    }
-
-
-    //WAVESPAWNER
-    //Aparición de enemigos
-    private void enemyPooling()
     {
         tiempo += Time.deltaTime;
 
-        if (tiempo >= spawnRate && j < enemigoPoolSize && k != 0)
+        if (tiempo >= spawnRate && j < poolTam && k > 0)
         {
             tiempo = 0f;
 
             float spawnYPosition = Random.Range(-5, 5);
 
-            enemigos[j].transform.position = new Vector2(spawnXPosition, spawnYPosition);
-
+            
+            enemies[j].transform.position = new Vector2(spawnXPosition, spawnYPosition); ;
+            enemies[j].transform.rotation = transform.rotation;
+            enemies[j].SetActive(true);
+                       
             j++;
         }
 
-        else if(tiempo > spawnRate)
+        else if (tiempo > spawnRate)
         {
-            totalEnemigos = GameObject.FindGameObjectsWithTag("Enemigo");
+            tiempo = 0f;
 
-            if (totalEnemigos.Length == 0)
+            tEnemigos = GameObject.FindGameObjectsWithTag("Enemigo");
+
+            if (tEnemigos.Length == 0)
             {
-                for (int i = 0; i < enemigoPoolSize; i++)
-                {
-                    Debug.Log("Destroying");
-                    Destroy(enemigos[i]);
-                }
-
-                for (int i = 0; i < enemigoPoolSize; i++)
-                {
-                    Debug.Log("Counting");
-                    enemigos[i] = (GameObject)Instantiate(enemigo, objectPoolPosition, Quaternion.identity);
-                }
-
-                j = 0;
                 k--;
+                j = 0;
             }
         }
     }
-
-    private void movimiento()
-    {
-        if (Input.GetKey(KeyCode.W))
-        {
-            movement = Mathf.Abs(Input.GetAxisRaw("Vertical") * velocidad);
-            posicion.transform.position = new Vector3(this.transform.position.x, (this.transform.position.y + velocidad * Time.deltaTime), 0);
-        }
-
-        else if (Input.GetKey(KeyCode.S))
-        {
-            movement = Mathf.Abs(Input.GetAxisRaw("Vertical") * velocidad);
-            posicion.transform.position = new Vector3(this.transform.position.x, (this.transform.position.y - velocidad * Time.deltaTime), 0);
-        }
-
-        else if (Input.GetKey(KeyCode.A))
-        {
-            movement = Mathf.Abs(Input.GetAxisRaw("Horizontal") * velocidad);
-
-            //se necesita esta linea a negativo paara que se conserven los hitboxes en animacion
-            //posicion.transform.localScale = new Vector3(-1, 1, 1);
-            
-            //movimiento
-            posicion.transform.position = new Vector3(this.transform.position.x - velocidad * Time.deltaTime, this.transform.position.y, 0);
-
-            if (!facinLeft)
-            {
-                facinRight = false;
-                facinLeft = true;
-                transform.Rotate(0.0f, 180.0f, 0.0f);
-            }
-        }
-
-        else if (Input.GetKey(KeyCode.D))
-        {
-            movement = Mathf.Abs(Input.GetAxisRaw("Horizontal") * velocidad);
-            posicion.transform.localScale = new Vector3(1, 1, 1);
-            posicion.transform.position = new Vector3(this.transform.position.x + velocidad * Time.deltaTime, this.transform.position.y, 0);
-
-            if(!facinRight)
-            {
-                facinLeft = false;
-                facinRight = true;
-                transform.Rotate(0.0f, 180.0f, 0.0f);
-            }
-        }
-    }
- }
+}
