@@ -28,9 +28,16 @@ public class Path {
             Gizmos.DrawCube(p, new Vector2(0.05f, 0.05f));
         }
 
+        if(lookPoints.Length > 1) {
+            for(int i = 1; i < lookPoints.Length; i++) {
+                Gizmos.DrawCube(lookPoints[i], new Vector2(0.05f, 0.05f));
+                Gizmos.DrawLine(lookPoints[i-1], lookPoints[i]);
+            }
+        }
+
         Gizmos.color = Color.white;
         foreach (Line l in turnBoundaries) {
-            l.DrawWithGizmos(0.2f);
+            //l.DrawWithGizmos(0.2f);
         }
     }
 }

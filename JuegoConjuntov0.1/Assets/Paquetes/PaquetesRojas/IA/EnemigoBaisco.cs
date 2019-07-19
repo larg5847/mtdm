@@ -20,14 +20,14 @@ public class EnemigoBaisco : MonoBehaviour
     }
 
     void Start() {
-        player = GameObject.FindGameObjectWithTag("Player");
+        //player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update() {
         float dist = Vector2.Distance(transform.position, player.transform.position);
 
         if(dist <= attackRadius) {
-            controller.FollowObject(player.transform);
+            controller.FollowObject(player.transform.position);
             followingPlayer = true;
         } else {
             controller.MoverEnDireccion(new Vector2(-1, 0));

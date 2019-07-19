@@ -17,14 +17,19 @@ public class Grid : MonoBehaviour
 
     private Node[,] grid;                           // Arreglo bidimensional de nodos
 
-    private float nodeDiameter;                     // Diamaetro de un nodo
+    [HideInInspector]
+    public float nodeDiameter;                     // Diamaetro de un nodo
     private int gridSizeX, gridSizeY;               // EL numero de nodos en el ejeX y el ejeY
 
     int penaltyMin = int.MaxValue;                  // Penalidad minima total
     int penaltyMax = int.MinValue;                  // Penalidad maxima total
 
+    public static Grid instance;
+
     void Awake()
     {
+        instance = this;
+
         nodeDiameter = nodeRadius * 2;
         gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
         gridSizeY = Mathf.RoundToInt(gridWorldSize.y / nodeDiameter);
@@ -95,6 +100,18 @@ public class Grid : MonoBehaviour
                 }
             }
         }
+
+        return neighbours;
+    }
+
+    public List<Node> GetSideNeighbours(Node node) {
+        List<Node> neighbours = new List<Node>();
+
+        if(node.gridX + 1 < gridSizeX) 
+            neighbours.Add(grid[node.gridX + 1, node.gridY]);
+
+        if(node.gridX - 1 >= 0)
+            neighbours.Add(grid[node.gridX - 1, node.gridY]);
 
         return neighbours;
     }
