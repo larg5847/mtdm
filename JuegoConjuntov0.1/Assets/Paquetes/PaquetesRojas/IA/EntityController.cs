@@ -22,7 +22,7 @@ public class EntityController : MonoBehaviour {
 
 
     void Awake() {
-        // Se asegura de los componentes basicos 
+        // Se asegura de los componentes basicos
         if((rb = this.GetComponent<Rigidbody2D>()) == null) {
             rb = this.gameObject.AddComponent<Rigidbody2D>();
         }
@@ -79,8 +79,8 @@ public class EntityController : MonoBehaviour {
         // Inicialmente espera unos segundos a que carge la escena
         if(Time.timeSinceLevelLoad < .3f)
             yield return new WaitForSeconds(0.3f);
-        
-        // Si el entity puede calcular 
+
+        // Si el entity puede calcular
         if(calculatePath)
             PathRequestManager.RequestPath(transform.position, target, OnPathFound);
 
@@ -122,7 +122,7 @@ public class EntityController : MonoBehaviour {
                 rb.velocity = direction.normalized * speed;
 
                 yield return null;      // repite ciclo
-                
+
             }
         }
     }
