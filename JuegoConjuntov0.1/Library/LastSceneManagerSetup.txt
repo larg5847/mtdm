@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Paquetes/PaquetesAlfredo/ejeZ/scene/escenaTiles.unity
+- path: Assets/Escenarios/PantallaInicial.unity
   isLoaded: 1
   isActive: 1
