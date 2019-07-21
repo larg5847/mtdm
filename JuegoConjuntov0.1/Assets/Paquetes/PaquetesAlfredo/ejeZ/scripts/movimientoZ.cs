@@ -5,7 +5,7 @@ using UnityEngine;
 public class movimientoZ : MonoBehaviour
 {
 
-    float velocidad = 2.0f;
+    float velocidad = 2.0f;  //4 - 6 -8f
 
 
     public Animator controlAnim;
@@ -19,6 +19,8 @@ public class movimientoZ : MonoBehaviour
 
     public bool attacking = false;
     
+
+    //agregarle vida al jugador 
     
     
     // Start is called before the first frame update
