@@ -23,7 +23,7 @@ public class hurtEnem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(vida);
+        //Debug.Log(vida);
         //t.position = new Vector3(t.position.x + (3.0f * Time.deltaTime), t.position.y, 0.0f);
     }
 

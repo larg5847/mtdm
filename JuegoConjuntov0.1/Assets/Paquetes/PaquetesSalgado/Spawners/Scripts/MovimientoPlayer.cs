@@ -73,4 +73,13 @@ public class MovimientoPlayer : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "hurtboxPowerUp")
+        {
+            velocidad += 1.0f;
+            Debug.Log(velocidad);
+        }
+    }
 }
