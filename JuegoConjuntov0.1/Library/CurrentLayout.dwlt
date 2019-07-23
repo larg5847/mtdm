@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 548}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -111,10 +111,10 @@ MonoBehaviour:
     y: 30
     width: 1642
     height: 770
-  m_MinSize: {x: 817, y: 498}
-  m_MaxSize: {x: 22012, y: 14048}
+  m_MinSize: {x: 813, y: 498}
+  m_MaxSize: {x: 22008, y: 14048}
   vertical: 0
-  controlID: 52
+  controlID: 95
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -136,10 +136,10 @@ MonoBehaviour:
     y: 0
     width: 1135
     height: 770
-  m_MinSize: {x: 540, y: 498}
-  m_MaxSize: {x: 18010, y: 14048}
+  m_MinSize: {x: 536, y: 498}
+  m_MaxSize: {x: 18006, y: 14048}
   vertical: 1
-  controlID: 53
+  controlID: 96
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 224}
   m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
-  controlID: 54
+  controlID: 16
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -184,8 +184,8 @@ MonoBehaviour:
     y: 0
     width: 260
     height: 411
-  m_MinSize: {x: 202, y: 224}
-  m_MaxSize: {x: 4002, y: 4024}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -242,10 +242,10 @@ MonoBehaviour:
     y: 411
     width: 1135
     height: 359
-  m_MinSize: {x: 540, y: 274}
-  m_MaxSize: {x: 18010, y: 10024}
+  m_MinSize: {x: 536, y: 274}
+  m_MaxSize: {x: 18006, y: 10024}
   vertical: 0
-  controlID: 146
+  controlID: 97
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -343,8 +343,8 @@ MonoBehaviour:
     y: 0
     width: 507
     height: 770
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 74}
+  m_MaxSize: {x: 4002, y: 4024}
   m_ActualView: {fileID: 23}
   m_Panes:
   - {fileID: 23}
@@ -387,10 +387,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -232
-    m_HBaseRangeMax: 232
-    m_VBaseRangeMin: -130.5
-    m_VBaseRangeMax: 130.5
+    m_HBaseRangeMin: -116
+    m_HBaseRangeMax: 116
+    m_VBaseRangeMin: -65.25
+    m_VBaseRangeMax: 65.25
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -410,7 +410,7 @@ MonoBehaviour:
       y: 17
       width: 464
       height: 322
-    m_Scale: {x: 1, y: 1}
+    m_Scale: {x: 2, y: 2}
     m_Translation: {x: 232, y: 161}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -418,15 +418,15 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -232
-      y: -161
-      width: 464
-      height: 322
+      x: -116
+      y: -80.5
+      width: 232
+      height: 161
     m_MinimalGUI: 1
-  m_defaultScale: 1
+  m_defaultScale: 2
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 464, y: 339}
+  m_LastWindowPixelSize: {x: 928, y: 678}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000001000100000100
@@ -460,23 +460,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: f4340000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: a0e1ffff30e8ffff32e8fffffeeaffff88ebffff223900007639000084390000
+      m_ExpandedIDs: 84f7ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Jugador
-        m_OriginalName: Jugador
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 14626
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -518,9 +518,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 6.8325014, y: 1.07375, z: 4.0284624}
+    m_Target: {x: -0.7529474, y: 3.761686, z: 4.2125793}
     speed: 2
-    m_Value: {x: 6.8325014, y: 1.07375, z: 4.0284624}
+    m_Value: {x: -0.7529474, y: 3.761686, z: 4.2125793}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -552,9 +552,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 37.065865
+    m_Target: 18.679459
     speed: 2
-    m_Value: 37.065865
+    m_Value: 18.679459
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -658,7 +658,7 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 14694
+  m_LastSelectedObjectID: 13048
 --- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -721,20 +721,19 @@ MonoBehaviour:
     m_SceneHandles: 
     m_ShowAllHits: 0
     m_SearchArea: 1
-    m_Folders:
-    - Assets/anotaciones
+    m_Folders: []
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\larg\Desktop\proyectogithubdinobots\mtdm\JuegoConjuntov0.1
+  m_LastProjectPath: /Users/claudiaaranda/Desktop/DinoBots/GitHub/mtdm/JuegoConjuntov0.1
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 46320000
     m_LastClickedID: 12870
-    m_ExpandedIDs: 000000002a300000a6340000c4340000c6340000ee3400003e350000503500006435000092350000b23500002c3600006e36000074360000a2360000b0360000ca360000d436000086370000883700008a370000
+    m_ExpandedIDs: 00000000482e00004e2e00008e2e00009a2e0000dc2e00007e2f00009c2f0000bc2f00001c300000623000006830000084300000f230000012310000863100002832000032320000423200006e32000082320000a0330000a2330000a4330000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -759,10 +758,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 3}
+    scrollPos: {x: 0, y: 83}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff000000002a300000a6340000ac340000c4340000c6340000ee3400003e350000503500006435000092350000b2350000b4350000cc3500000a3600004636000098360000a2360000ca360000d436000086370000883700008a37000008420000
+    m_ExpandedIDs: ffffffff00000000482e00004e2e00008e2e00009a2e0000dc2e00007e2f00009c2f0000bc2f00001c300000623000006830000084300000f23000001231000086310000283200003232000042320000523200006e32000082320000a0330000a2330000a4330000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

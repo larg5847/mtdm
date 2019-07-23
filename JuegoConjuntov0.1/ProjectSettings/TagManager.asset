@@ -7,6 +7,15 @@ TagManager:
   - hitboxJugador
   - hurtboxJugador
   - Enemigo
+  - Proyectil
+  - hitboxProyectil
+  - hurtboxProyectil
+  - PowerUp
+  - hitboxPowerUp
+  - hurtboxPowerUp
+  - hurtboxPlayer
+  - hitboxPlayer
+  - IA Manager
   layers:
   - Default
   - TransparentFX
