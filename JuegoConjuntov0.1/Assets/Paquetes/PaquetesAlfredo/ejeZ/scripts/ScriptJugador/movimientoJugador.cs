@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class movimientoZ : MonoBehaviour
+public class movimientoJugador : MonoBehaviour
 {
 
     float velocidad = 2.0f;  //4 - 6 -8f
@@ -18,10 +18,10 @@ public class movimientoZ : MonoBehaviour
     Vector3 mov = new Vector3(0.0f,0.0f,0.0f);
 
     public bool attacking = false;
-    
+
 
     //agregarle vida al jugador 
-    
+    int vida = 100;
     
     // Start is called before the first frame update
     void Start()
@@ -40,11 +40,11 @@ public class movimientoZ : MonoBehaviour
         controlAnim.SetFloat("speed", Mathf.Abs(rb.velocity.magnitude));
 
         if (rb.velocity.x > 0) {
-            transform.localScale = new Vector3(1, 1, 1);
+            this.transform.localScale = new Vector3(1, 1, 1);
             //controlAnim.SetFloat("speed", inputJoystick.x);
         } else if(rb.velocity.x < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            this.transform.localScale = new Vector3(-1, 1, 1);
             //controlAnim.SetFloat("speed", inputJoystick.x);
         }
 
@@ -97,6 +97,9 @@ public class movimientoZ : MonoBehaviour
         }
         */
     }
+
+    
+
 
     public void activarAtt()
     {

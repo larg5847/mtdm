@@ -97,9 +97,11 @@ public class EnemigoAnim : MonoBehaviour
             animator.SetBool("atack", false);
 
             if(player.transform.position.x > this.transform.position.x) {
-                sprRenderer.flipX = false;
+                this.transform.localScale = new Vector3(1, 1, 1);
+                //sprRenderer.flipX = false;
             } else if (player.transform.position.x < this.transform.position.x) {
-                sprRenderer.flipX = true;
+                this.transform.localScale = new Vector3(-1, 1, 1);
+                //sprRenderer.flipX = true;
             }
 
             if(playerDist > attackRadius * 2.5f) {
@@ -134,9 +136,11 @@ public class EnemigoAnim : MonoBehaviour
         int vel = Mathf.RoundToInt(controller.rb.velocity.x);
 
         if(vel > 0) {
-            sprRenderer.flipX = false;
+            this.transform.localScale = new Vector3(-1, 1, 1);
+            //sprRenderer.flipX = false;
         } else if (vel < 0) {
-            sprRenderer.flipX = true;
+            this.transform.localScale = new Vector3(1, 1, 1);
+            //sprRenderer.flipX = true;
         }
         animator.SetFloat("speed", Mathf.RoundToInt(controller.rb.velocity.magnitude));
     }
