@@ -958,7 +958,7 @@ GameObject:
   - component: {fileID: 1701248959}
   m_Layer: 0
   m_Name: IA
-  m_TagString: Untagged
+  m_TagString: IA Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
