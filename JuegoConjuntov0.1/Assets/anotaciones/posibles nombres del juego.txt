@@ -26,4 +26,5 @@ Robot Heat
 ---se modifico el script del enemigo para que se mantivieran los cuadros de animacion de ataque
 ---se modifico a jugador poniendole vida y verificando como hacer para que se le baje vida al jugador
 ---se modifico el hueso de powerup para que desaparezca con el contacto con el jugador
+---se frego el movimiento de IA al mover a positivo todos los objetos
 

@@ -21,7 +21,7 @@ public class movimientoJugador : MonoBehaviour
 
 
     //agregarle vida al jugador 
-    int vida = 100;
+    //int vida = 100;
     
     // Start is called before the first frame update
     void Start()

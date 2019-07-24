@@ -40,6 +40,7 @@ public class hurtEnem : MonoBehaviour
             ps.Play();
             if (vida <= 0)
             {
+
                 parentMyself.SetActive(false);
             }
         }

@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Paquetes\PaquetesAlfredo\ejeZ\scripts\cargarEscenas.cs" />
     <Compile Include="Assets\Paquetes\PaquetesAlfredo\ejeZ\scripts\hurtEnem.cs" />
+    <Compile Include="Assets\Paquetes\PaquetesAlfredo\ejeZ\scripts\ScriptJugador\hurtJug.cs" />
     <Compile Include="Assets\Paquetes\PaquetesAlfredo\ejeZ\scripts\ScriptJugador\movimientoJugador.cs" />
     <Compile Include="Assets\Paquetes\PaquetesRojas\IA\EnemigoAnim.cs" />
     <Compile Include="Assets\Paquetes\PaquetesRojas\IA\EnemigoBaisco.cs" />

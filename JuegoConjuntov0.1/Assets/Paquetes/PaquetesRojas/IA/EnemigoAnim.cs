@@ -136,10 +136,10 @@ public class EnemigoAnim : MonoBehaviour
         int vel = Mathf.RoundToInt(controller.rb.velocity.x);
 
         if(vel > 0) {
-            this.transform.localScale = new Vector3(-1, 1, 1);
+            this.transform.localScale = new Vector3(1, 1, 1);
             //sprRenderer.flipX = false;
         } else if (vel < 0) {
-            this.transform.localScale = new Vector3(1, 1, 1);
+            this.transform.localScale = new Vector3(-1, 1, 1);
             //sprRenderer.flipX = true;
         }
         animator.SetFloat("speed", Mathf.RoundToInt(controller.rb.velocity.magnitude));
