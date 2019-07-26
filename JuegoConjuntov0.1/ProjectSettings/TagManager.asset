@@ -4,15 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - hitboxJugador
-  - hurtboxJugador
-  - Enemigo
-<<<<<<< HEAD
-  - PowerUp
-  - hitboxPowerUp
-  - hurtboxPowerUp
-  - hitboxEnemigo
-=======
   - Proyectil
   - hitboxProyectil
   - hurtboxProyectil
@@ -21,8 +12,8 @@ TagManager:
   - hurtboxPowerUp
   - hurtboxPlayer
   - hitboxPlayer
-  - IA Manager
->>>>>>> b7d98ad2980a5402ccf76aa70fbeb6e3a5ff3691
+  - hitboxJugador
+  - hurtboxJugador
   layers:
   - Default
   - TransparentFX
@@ -32,7 +23,7 @@ TagManager:
   - UI
   - 
   - 
-  - Enemigo Colliders
+  - 
   - 
   - 
   - 

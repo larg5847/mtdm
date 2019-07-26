@@ -82,8 +82,8 @@ MonoBehaviour:
   speed: 1
   followRadius: 5
   attackRadius: 0.5
+  vida: 0
   animator: {fileID: 903265130435878613}
-  sprRenderer: {fileID: 5347650351198727575}
   player: {fileID: 0}
 --- !u!114 &2518067218283311534
 MonoBehaviour:
@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 1107364848688231492}
   - component: {fileID: 8705763523427324643}
   - component: {fileID: 8705763523427324642}
-  - component: {fileID: 8705763523427324652}
+  - component: {fileID: 3170255618492691867}
   m_Layer: 8
   m_Name: Hurtbox
   m_TagString: hurtboxJugador
@@ -4882,7 +4882,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!114 &8705763523427324652
+--- !u!114 &3170255618492691867
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4891,10 +4891,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 8705763523427324655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6aa32556a91ed1a40bb9621f2f0eb5da, type: 3}
+  m_Script: {fileID: 11500000, guid: 082e21051bf264062849c04838f4768f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentMyself: {fileID: 8705763523665818683}
+  OnTriggerEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2518067218283311528}
+        m_MethodName: RecibirMadrazo
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: EventCollider2D, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &8705763523665818683
 GameObject:
   m_ObjectHideFlags: 0

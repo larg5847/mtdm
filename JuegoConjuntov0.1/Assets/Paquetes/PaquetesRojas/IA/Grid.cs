@@ -7,6 +7,7 @@ public class Grid : MonoBehaviour
     public bool displayGridGizmos;                  // Este boolean nos permite esconder o mostrar la malla en el editor
     public LayerMask unwalkableMask;                // La capa de los objetos que no se puede caminar sobre de ellos
     public Vector2 gridWorldSize;                   // El tamaño de la malla 
+    private Vector2 startGridPosition;              // Posicion inicial de la malla
     public float nodeRadius;                        // El radio de los nodos
     public int obstaclePenalty = 50;                // Penalty por caminar cerca de un obstaculo
     public TerrainType[] walkebleRegions;           // Regiones las cuales se puden caminar y su penalidad
@@ -53,6 +54,7 @@ public class Grid : MonoBehaviour
     // Crea la malla de nodos
     void CreateGrid()
     {
+        startGridPosition = transform.position;
         grid = new Node[gridSizeX, gridSizeY];
         Vector3 worldBottomLeft = transform.position - Vector3.right * gridWorldSize.x / 2 - Vector3.up * gridWorldSize.y / 2;
         for (int x = 0; x < gridSizeX; x++)
@@ -119,8 +121,9 @@ public class Grid : MonoBehaviour
     // Regresa el nodo ubicado a cierta posicion de la malla
     public Node NodeFromWorldPoint(Vector3 worldPosition)
     {
-        float percentX = (worldPosition.x + gridWorldSize.x / 2) / gridWorldSize.x;
-        float percentY = (worldPosition.y + gridWorldSize.y / 2) / gridWorldSize.y;
+        float percentX = (worldPosition.x - startGridPosition.x + gridWorldSize.x / 2) / gridWorldSize.x;
+        float percentY = (worldPosition.y - startGridPosition.y + gridWorldSize.y / 2) / gridWorldSize.y;
+        
 
         percentX = Mathf.Clamp01(percentX);
         percentY = Mathf.Clamp01(percentY);

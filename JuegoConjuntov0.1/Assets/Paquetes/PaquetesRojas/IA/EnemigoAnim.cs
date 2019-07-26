@@ -7,6 +7,7 @@ public class EnemigoAnim : MonoBehaviour
     public float speed = 1.0f;                  // Velocidad del jugador
     public float followRadius = 5.0f;           // Radio en el que empieza a seguir al jugador
     public float attackRadius = 1.0f;           // Radio en el que empieza a atacar al jugador
+    public int vida;
 
     private EntityController controller;        // EntityController para controlar el movimiento mediante IA
     public Animator animator;                   // Controlador de las animaciones
@@ -37,6 +38,19 @@ public class EnemigoAnim : MonoBehaviour
 
         // Verifica que exista el objeto de control de IA
         EntityUtils.CheckForIAManger();
+    }
+
+    public void RecibirMadrazo(Collider2D col) {
+        if(col.tag == "hitboxJugador") {
+            vida -= 10;
+            if(vida == 0) {
+                Morir();
+            }
+        }
+    }
+
+    private void Morir() {
+
     }
 
     // Courutina que sigue al jugador
@@ -113,10 +127,10 @@ public class EnemigoAnim : MonoBehaviour
 
             // Dependiendo de la posicion del jugador se asegura que este mirando en la direccion correcta
             if(player.transform.position.x > this.transform.position.x) {
-                this.transform.localScale = new Vector3(1, 1, 1);
+                this.transform.localScale = new Vector3(-1, 1, 1);
                 //sprRenderer.flipX = false;
             } else if (player.transform.position.x < this.transform.position.x) {
-                this.transform.localScale = new Vector3(-1, 1, 1);
+                this.transform.localScale = new Vector3(1, 1, 1);
                 //sprRenderer.flipX = true;
             }
 
@@ -160,10 +174,10 @@ public class EnemigoAnim : MonoBehaviour
 
         // Se asegura que este mirando en la direccion correcta
         if(vel > 0) {
-            this.transform.localScale = new Vector3(1, 1, 1);
+            this.transform.localScale = new Vector3(-1, 1, 1);
             //sprRenderer.flipX = false;
         } else if (vel < 0) {
-            this.transform.localScale = new Vector3(-1, 1, 1);
+            this.transform.localScale = new Vector3(1, 1, 1);
             //sprRenderer.flipX = true;
         }
 
