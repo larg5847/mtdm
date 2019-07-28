@@ -11,6 +11,9 @@ public class MovimientoPlayer : MonoBehaviour
     private float movement = 0.0f;
     public Transform firePoint;
 
+    //Vida del jugador
+    public int vida;
+
     private bool facinRight = true;
     private bool facinLeft = false;
 
@@ -19,6 +22,8 @@ public class MovimientoPlayer : MonoBehaviour
         posicion = this.transform;
 
         firePoint = firePoint.transform;
+
+        vida = 100;
     }
 
 
@@ -74,12 +79,18 @@ public class MovimientoPlayer : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void powerUp(Collider2D collision)
     {
-        if (collision.gameObject.tag == "hurtboxPowerUp")
+        if (collision.gameObject.tag == "PowerUp")
         {
             velocidad += 1.0f;
-            Debug.Log(velocidad);
+            Debug.Log("La velocidad aumentó a " + velocidad);
+
+            if (vida < 100)
+            {
+                vida += 10;
+                Debug.Log("La vida aumentó a " + vida);
+            }
         }
     }
 }

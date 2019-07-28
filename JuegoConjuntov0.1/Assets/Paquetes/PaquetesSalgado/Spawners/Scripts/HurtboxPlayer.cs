@@ -4,34 +4,12 @@ using UnityEngine;
 
 public class HurtboxPlayer : MonoBehaviour
 {
-    int vida;
+    public EventCollider2D OnTriggerEnter;
 
-    private void Awake()
+    void OnTriggerEnter2D(Collider2D col)
     {
-        vida = 50;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "hurtboxPowerUp")
-        {
-            if (vida < 100)
-            {
-                vida += 10;
-                Debug.Log(vida);
-            }
-        }
+        // Manda a llamar el evento
+        if (OnTriggerEnter != null)
+            OnTriggerEnter.Invoke(col);
     }
 }

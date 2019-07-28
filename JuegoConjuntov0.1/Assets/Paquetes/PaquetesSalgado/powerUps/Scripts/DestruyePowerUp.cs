@@ -21,6 +21,18 @@ public class DestruyePowerUp : MonoBehaviour
             Debug.Log("se colisiono con " + collision.gameObject.tag);
             destruye();
         }
+
+        else if (collision.gameObject.tag == "hurtboxPlayer")
+        {
+            Debug.Log("Se colisionó con " + collision.gameObject.tag);
+            destruye();
+        }
+
+        else if (collision.gameObject.tag == "Proyectil")
+        {
+            Debug.Log("Se colisionó con " + collision.gameObject.tag);
+            destruye();
+        }
     }
 
     //Método que desactiva el objeto

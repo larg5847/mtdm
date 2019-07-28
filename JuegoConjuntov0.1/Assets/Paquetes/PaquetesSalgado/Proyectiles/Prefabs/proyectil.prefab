@@ -1,62 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &611383631992354923
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6188441102574752859}
-  - component: {fileID: 435724100691140576}
-  m_Layer: 0
-  m_Name: HitBox
-  m_TagString: hitboxProyectil
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6188441102574752859
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 611383631992354923}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 5.811925}
-  m_LocalScale: {x: 1.1359661, y: 1.9305018, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4594591921572998689}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &435724100691140576
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 611383631992354923}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.2718159}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.5436316}
-  m_EdgeRadius: 0
 --- !u!1 &4225940077643952285
 GameObject:
   m_ObjectHideFlags: 0
@@ -70,6 +13,7 @@ GameObject:
   - component: {fileID: 1857285560125802295}
   - component: {fileID: 7897800200637747824}
   - component: {fileID: 437303813646383290}
+  - component: {fileID: 5761168239820858784}
   m_Layer: 0
   m_Name: proyectil
   m_TagString: Proyectil
@@ -87,9 +31,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.18, y: 0.723, z: 0}
   m_LocalScale: {x: 0.880308, y: 0.518, z: 1}
-  m_Children:
-  - {fileID: 8643164828656181015}
-  - {fileID: 6188441102574752859}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -188,64 +130,77 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a22ceb9948e25c45b9300b4396df9c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &9174654574169377106
-GameObject:
+--- !u!60 &5761168239820858784
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8643164828656181015}
-  - component: {fileID: 7329665709540308148}
-  - component: {fileID: 5150517984085523622}
-  m_Layer: 0
-  m_Name: HurtBox
-  m_TagString: hurtboxProyectil
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8643164828656181015
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9174654574169377106}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 5.811925}
-  m_LocalScale: {x: 1.1359661, y: 1.9305018, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4594591921572998689}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &7329665709540308148
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9174654574169377106}
+  m_GameObject: {fileID: 4225940077643952285}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.13590916}
-  serializedVersion: 2
-  m_Radius: 0.6359091
---- !u!114 &5150517984085523622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9174654574169377106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ae24358f68a2734f9e8d2f6acb910b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentMyself: {fileID: 4225940077643952285}
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3, y: 3}
+    newSize: {x: 3, y: 3}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.48999998, y: -1.17}
+      - {x: 0.45, y: -1.12}
+      - {x: 0.51, y: -1.01}
+      - {x: 0.44, y: -0.91999996}
+      - {x: 0.48999998, y: -0.87}
+      - {x: 0.48999998, y: -0.74}
+      - {x: 0.37, y: -0.61}
+      - {x: 0.48999998, y: -0.25}
+      - {x: 0.64, y: 0.11}
+      - {x: 0.65999997, y: 0.17999999}
+      - {x: 0.66999996, y: 0.34}
+      - {x: 0.66999996, y: 0.53}
+      - {x: 0.65, y: 0.64}
+      - {x: 0.59999996, y: 0.81}
+      - {x: 0.53, y: 0.95}
+      - {x: 0.45999998, y: 1.04}
+      - {x: 0.37, y: 1.14}
+      - {x: 0.26999998, y: 1.2099999}
+      - {x: 0.19, y: 1.25}
+      - {x: 0.17999999, y: 1.38}
+      - {x: 0.14, y: 1.4399999}
+      - {x: 0.07, y: 1.5}
+      - {x: -0.08, y: 1.5}
+      - {x: -0.17, y: 1.37}
+      - {x: -0.17, y: 1.27}
+      - {x: -0.38, y: 1.13}
+      - {x: -0.48, y: 1.02}
+      - {x: -0.53999996, y: 0.93}
+      - {x: -0.61, y: 0.78}
+      - {x: -0.65, y: 0.59}
+      - {x: -0.65, y: 0.19999999}
+      - {x: -0.58, y: 0}
+      - {x: -0.42, y: -0.32}
+      - {x: -0.34, y: -0.7}
+      - {x: -0.45, y: -0.71}
+      - {x: -0.5, y: -0.78}
+      - {x: -0.5, y: -0.85999995}
+      - {x: -0.51, y: -0.98999995}
+      - {x: -0.5, y: -1.09}
+      - {x: -0.51, y: -1.29}
+      - {x: -0.42, y: -1.36}
+      - {x: -0.29999998, y: -1.37}
+      - {x: -0.22999999, y: -1.4399999}
+      - {x: -0.17, y: -1.49}
+      - {x: -0.099999994, y: -1.5}
+      - {x: 0.17999999, y: -1.5}
+      - {x: 0.32, y: -1.38}
+      - {x: 0.42, y: -1.3399999}
+      - {x: 0.48999998, y: -1.29}

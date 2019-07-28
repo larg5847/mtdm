@@ -33,7 +33,7 @@ public class hurtEnem : MonoBehaviour
     //gravedad
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "hitboxJugador")
+        if (collision.gameObject.tag == "Proyectil")
         {
             vida -= 10;
             Debug.Log(vida);
