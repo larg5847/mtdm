@@ -777,7 +777,6 @@ MonoBehaviour:
   joystick: {fileID: 965624501}
   rb: {fileID: 1258234673}
   inputJoystick: {x: 0, y: 0, z: 0}
-  attacking: 0
 --- !u!1 &1478629630
 GameObject:
   m_ObjectHideFlags: 0
@@ -1101,7 +1100,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1258234674}
         m_MethodName: activarAtt
         m_Mode: 1
         m_Arguments:
@@ -1319,6 +1318,7 @@ GameObject:
   - component: {fileID: 2103053739}
   - component: {fileID: 2103053738}
   - component: {fileID: 2103053737}
+  - component: {fileID: 2103053740}
   - component: {fileID: 2103053736}
   m_Layer: 0
   m_Name: Hurtbox
@@ -1348,11 +1348,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103053734}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 060a828cd03f21e4dafe6d7b08324d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentMyself: {fileID: 1258234670}
 --- !u!198 &2103053737
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -6045,6 +6046,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.36}
   m_EdgeRadius: 0
+--- !u!114 &2103053740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103053734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 082e21051bf264062849c04838f4768f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnTriggerEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1258234674}
+        m_MethodName: bajarVida
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: EventCollider2D, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!61 &764222438394630344
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6055,7 +6084,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -6148,6 +6177,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1258234670}
+    - target: {fileID: 2518067218283311528, guid: 5629519bf750a2048b8299cab6eb3a9d,
+        type: 3}
+      propertyPath: vida
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5251202873274272134, guid: 5629519bf750a2048b8299cab6eb3a9d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6181,6 +6215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7421945032211147586}
   - component: {fileID: 764222438394630344}
+  - component: {fileID: 2701118939551808657}
   m_Layer: 0
   m_Name: Hitbox
   m_TagString: hitboxJugador
@@ -6188,6 +6223,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!50 &2701118939551808657
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2701118939551808656}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!95 &3810322679570658993
 Animator:
   serializedVersion: 3

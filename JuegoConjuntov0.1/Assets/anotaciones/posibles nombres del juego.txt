@@ -28,3 +28,13 @@ Robot Heat
 ---se modifico el hueso de powerup para que desaparezca con el contacto con el jugador
 ---se frego el movimiento de IA al mover a positivo todos los objetos
 
+
+
+
+
+/////////en codigo 
+--spawner jugador  
+--pausa / salida 
+--modificar el comportamiento del jugador por el power up 
+--fueguito 
+animacion con personaje en recortes 

@@ -17,11 +17,11 @@ public class movimientoJugador : MonoBehaviour
     Transform posicion;
     Vector3 mov = new Vector3(0.0f,0.0f,0.0f);
 
-    public bool attacking = false;
+    bool attacking = false;
 
 
     //agregarle vida al jugador 
-    //int vida = 100;
+    int vida = 100;
     
     // Start is called before the first frame update
     void Start()
@@ -105,5 +105,21 @@ public class movimientoJugador : MonoBehaviour
     {
         attacking = true;
         //controlAnim.SetBool("atack", attacking);
+    }
+
+
+
+    public void bajarVida(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "hitboxEnemigo")
+        {
+            vida -= 10;
+            Debug.Log(vida);
+            if (vida <= 0)
+            {
+                this.gameObject.SetActive(false);
+                //parentMyself.SetActive(false);
+            }
+        }
     }
 }

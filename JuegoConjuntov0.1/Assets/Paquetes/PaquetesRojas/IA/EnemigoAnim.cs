@@ -7,7 +7,7 @@ public class EnemigoAnim : MonoBehaviour
     public float speed = 1.0f;                  // Velocidad del jugador
     public float followRadius = 5.0f;           // Radio en el que empieza a seguir al jugador
     public float attackRadius = 1.0f;           // Radio en el que empieza a atacar al jugador
-    public int vida;
+    public int vida = 100;
 
     private EntityController controller;        // EntityController para controlar el movimiento mediante IA
     public Animator animator;                   // Controlador de las animaciones

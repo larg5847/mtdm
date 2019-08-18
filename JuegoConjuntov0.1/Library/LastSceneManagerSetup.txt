@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Paquetes/PaquetesSalgado/Scenes/PowerUps_WaveSpawner_Proyectiles.unity
+- path: Assets/Paquetes/PaquetesAlfredo/ejeZ/scene/escenaTiles.unity
   isLoaded: 1
   isActive: 1
