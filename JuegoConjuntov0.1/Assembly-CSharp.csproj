@@ -93,6 +93,7 @@
     <Compile Include="Assets\Paquetes\PaquetesSalgado\Proyectiles\Scripts\hurtProyectil.cs" />
     <Compile Include="Assets\Paquetes\PaquetesSalgado\Proyectiles\Scripts\LanzaProyectil.cs" />
     <Compile Include="Assets\Paquetes\PaquetesSalgado\Proyectiles\Scripts\Proyectil.cs" />
+    <Compile Include="Assets\Paquetes\PaquetesSalgado\Proyectiles\Scripts\ProyectilFuego.cs" />
     <Compile Include="Assets\Paquetes\PaquetesSalgado\Spawners\Scripts\HurtboxPlayer.cs" />
     <Compile Include="Assets\Paquetes\PaquetesSalgado\Spawners\Scripts\MovimientoPlayer.cs" />
     <Compile Include="Assets\Paquetes\PaquetesSalgado\Spawners\Scripts\WaveSpawner.cs" />

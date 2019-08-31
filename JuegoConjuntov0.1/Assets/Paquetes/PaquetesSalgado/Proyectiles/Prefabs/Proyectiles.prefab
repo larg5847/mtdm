@@ -45,5 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireBullet: 0.05
   bullet: {fileID: 4225940077643952285, guid: c28d967a0ae51774b9cb3fb3d0d8fd63, type: 3}
-  poolTam: 5
+  poolTam: 2
   firePoint: {fileID: 0}

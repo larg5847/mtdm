@@ -11,7 +11,7 @@ public class LanzaProyectil : MonoBehaviour
     //Lista de objetos
     List<GameObject> bullets;
     //Tamaño de lista de pool
-    public int poolTam = 5;
+    public int poolTam = 2;
     public Transform firePoint;
 
     // Start is called before the first frame update

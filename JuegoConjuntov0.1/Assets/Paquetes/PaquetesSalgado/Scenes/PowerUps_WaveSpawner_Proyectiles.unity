@@ -212,6 +212,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 3166495242362293534, guid: f3eba6a1478cd4e42aea35f6e9c008f8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3166495242362293534, guid: f3eba6a1478cd4e42aea35f6e9c008f8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3166495242362293534, guid: f3eba6a1478cd4e42aea35f6e9c008f8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4918353272181556176, guid: f3eba6a1478cd4e42aea35f6e9c008f8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -479,5 +494,11 @@ PrefabInstance:
       propertyPath: firePoint
       value: 
       objectReference: {fileID: 414170792}
+    - target: {fileID: 3127556474496671135, guid: 9762bbc111537f7409086ba0c28a516f,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 6974299777729383550, guid: a93ecefe133dbcd4fad1017bc2fba78c,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9762bbc111537f7409086ba0c28a516f, type: 3}

@@ -6,6 +6,7 @@ public class Proyectil : MonoBehaviour
 {
     public float velocidad = 13f;
     public float velocidadGiro = 10f;
+
     Transform t;
     Rigidbody2D rB;
 

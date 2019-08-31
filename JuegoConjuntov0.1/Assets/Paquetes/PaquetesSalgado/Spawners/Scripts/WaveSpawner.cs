@@ -5,7 +5,7 @@ using UnityEngine;
 public class WaveSpawner : MonoBehaviour
 {
     //Tiempo de aparición entre enemigos
-    public float spawnRate = 2f;
+    public float spawnRate = 3f;
     //Objeto para hacer el pool
     public GameObject enemy;
     //Lista de objetos

@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e122a2a7bffd65448fd864f43f5cf95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 5
+  spawnRate: 3
   enemy: {fileID: 8329067869822163862, guid: 9103017cde3aa1a40bef54bce28a51ac, type: 3}
   poolTam: 5
   tiempo: 0

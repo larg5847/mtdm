@@ -13,7 +13,7 @@ public class PowerUpSpawner : MonoBehaviour
     //Lista de objetos
     List<GameObject> powerUps;
     //Tamaño de lista de pool
-    private int poolTam = 3;
+    private int poolTam = 2;
     //Índice de objeto
     private int i = 0;
     //Posición de aparición de objeto sobre el eje Y
