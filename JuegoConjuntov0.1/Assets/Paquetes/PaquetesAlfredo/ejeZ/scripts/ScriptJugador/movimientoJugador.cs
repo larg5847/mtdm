@@ -5,19 +5,21 @@ using UnityEngine;
 public class movimientoJugador : MonoBehaviour
 {
 
-    float velocidad = 2.0f;  //4 - 6 -8f
+    private float velocidad = 2.0f;  //4 - 6 -8f
 
-
+    public int intentos = 3;
     public Animator controlAnim;
     public Joystick joystick;
     public Rigidbody2D rb;
     public Vector3 inputJoystick;
 
-    SpriteRenderer tSprite;
-    Transform posicion;
-    Vector3 mov = new Vector3(0.0f,0.0f,0.0f);
+    private SpriteRenderer tSprite;
+    private Transform posicion;
+    private Vector3 mov = new Vector3(0.0f,0.0f,0.0f);
 
-    bool attacking = false;
+    private bool attacking = false;
+
+    private Vector2 posInicial;
 
 
     //agregarle vida al jugador 
@@ -28,6 +30,7 @@ public class movimientoJugador : MonoBehaviour
     {
         posicion = this.transform;
         tSprite = GetComponent<SpriteRenderer>();
+        posInicial = transform.position;
     }
 
     // Update is called once per frame
@@ -113,12 +116,18 @@ public class movimientoJugador : MonoBehaviour
     {
         if (collider.gameObject.tag == "hitboxEnemigo")
         {
-            vida -= 10;
-            Debug.Log(vida);
-            if (vida <= 0)
+            //vida -= 10;
+            //Debug.Log(vida);
+
+            intentos --;
+            Debug.Log(intentos);
+            if (intentos == 0)//(vida <= 0)
             {
+                ControlJuego.instance.EndGame();
                 this.gameObject.SetActive(false);
                 //parentMyself.SetActive(false);
+            } else {
+                transform.position = posInicial;
             }
         }
     }

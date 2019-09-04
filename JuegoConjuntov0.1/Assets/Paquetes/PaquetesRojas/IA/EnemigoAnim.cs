@@ -21,6 +21,9 @@ public class EnemigoAnim : MonoBehaviour
     private string state;                       // String con el estado actual del Entity
     private float playerDist;                   // La distacia hacia el juador
 
+    // Control de forzar cambio de estado
+    private string lastState;                   // El estado anterior antes de forzar cambio de estado
+
     void Awake() {
         // Si no tiene el comoponente de EntityController se lo agrega 
         if( (controller = this.GetComponent<EntityController>()) == null ) {
@@ -38,6 +41,9 @@ public class EnemigoAnim : MonoBehaviour
 
         // Verifica que exista el objeto de control de IA
         EntityUtils.CheckForIAManger();
+
+        // Inicia checkeo de estado
+        StartCoroutine(CheckGameState());
     }
 
     public void RecibirMadrazo(Collider2D col) {
@@ -51,6 +57,41 @@ public class EnemigoAnim : MonoBehaviour
 
     private void Morir() {
 
+    }
+
+    // Courutina que checa el estado del juego
+    IEnumerator CheckGameState() {
+        // Se aseguara que ya paso un tiempo desde que se cargo la escena
+        if(Time.timeSinceLevelLoad < .3f)
+            yield return new WaitForSeconds(0.3f);
+        
+        // Entra en un update constante
+        while(true) {
+            // Checa si el control del juego esta pidiendo que los enemigos paren
+            // y verifica que no se tenga registro del ultimo estado
+            if(ControlJuego.instance.pararEnemigos == true && lastState == null) {
+                // Se para el task actual y al entity
+                // se guarda el estado en el que estaba para despues continuar
+                task.Stop();
+                controller.StopEntity();
+                lastState = state;
+                state = "None";
+
+                // Si estaba atacando se asegura que ahora este en idle
+                if(lastState == "AttackPlayer")
+                    animator.SetBool("atack", false);
+
+            }
+
+            // Si se quita lo de parar enemigos, se regresa al estado que antes estaba
+            if(lastState != null && ControlJuego.instance.pararEnemigos == false) {
+                state = lastState;
+                lastState = null;
+
+            }
+            // Espera 0.1 segundos antes de volver a actualizar
+            yield return new WaitForSeconds(0.1f);
+        }
     }
 
     // Courutina que sigue al jugador

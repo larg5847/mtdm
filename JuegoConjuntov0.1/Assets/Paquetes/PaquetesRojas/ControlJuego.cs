@@ -6,12 +6,17 @@ public class ControlJuego : MonoBehaviour
 {
     public static ControlJuego instance;
 
+    // Control de estado actual del juego
+    [Header("Estado Juego")]
+    public bool pararEnemigos = false;  // Forza a parar todos los enemigos del juego
+
     [Header("Elementos UI")]
-    public GameObject gameUI;
-    public GameObject pauseUI;
+    public GameObject gameUI;           // Objeto UI durante el juego
+    public GameObject pauseUI;          // Objeto UI cuando esta pausado
+    public GameObject endUI;            // Objeto UI cuando perdio el jugador
 
     private void Awake() {
-        //instance = this;
+        instance = this;
     }
 
     private void Start() {
@@ -35,6 +40,14 @@ public class ControlJuego : MonoBehaviour
                 }
             }
         #endif
+    }
+
+    // Metodo que se llama cuando el jugador pierde
+    public void EndGame() {
+        // Primero para a todos los enemigos
+        pararEnemigos = true;
+        // Activa el UI de fin del juego
+        endUI.SetActive(true);
     }
 
     // Metodo que pausa el juego

@@ -105,7 +105,7 @@ public class EntityController : MonoBehaviour {
         if(waypointsF.Length > 0) {
             Vector3 currentWaypoint = waypointsF[0];
 
-            while(true) {
+            while(true && calculatePath) {
                 // Si las distancia entre el Entity y el waypoint es la minima para cambiar al siguiente waypoint
                 if(Vector2.Distance(transform.position, currentWaypoint) <= 0.3f) {
                     targetIndex ++;
