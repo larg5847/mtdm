@@ -208,7 +208,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 84ce2f114ad12bd4ebafc77060220324, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 35dd0ff567675304ba4eb531e42683a8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -250,4 +250,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93a3d8c0465a5e249b990f0ec1dc1f08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  intentos: 3
   controlAnim: {fileID: 2422358475834092888}
+  joystick: {fileID: 0}
+  rb: {fileID: 0}
+  inputJoystick: {x: 0, y: 0, z: 0}

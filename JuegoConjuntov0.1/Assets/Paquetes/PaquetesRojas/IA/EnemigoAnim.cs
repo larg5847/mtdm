@@ -47,7 +47,7 @@ public class EnemigoAnim : MonoBehaviour
     }
 
     public void RecibirMadrazo(Collider2D col) {
-        if(col.tag == "hitboxJugador") {
+        if(col.tag == "Proyectil") {
             vida -= 10;
             if(vida == 0) {
                 Morir();
@@ -56,7 +56,7 @@ public class EnemigoAnim : MonoBehaviour
     }
 
     private void Morir() {
-
+        Debug.Log("Mataste a un enemigo");
     }
 
     // Courutina que checa el estado del juego

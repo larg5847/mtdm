@@ -12,12 +12,16 @@ public class movimientoJugador : MonoBehaviour
     public Joystick joystick;
     public Rigidbody2D rb;
     public Vector3 inputJoystick;
+    public Transform firePoint;
 
     private SpriteRenderer tSprite;
     private Transform posicion;
     private Vector3 mov = new Vector3(0.0f,0.0f,0.0f);
 
     private bool attacking = false;
+
+    private bool facinLeft = true;
+    private bool facinRight = false;
 
     private Vector2 posInicial;
 
@@ -31,6 +35,7 @@ public class movimientoJugador : MonoBehaviour
         posicion = this.transform;
         tSprite = GetComponent<SpriteRenderer>();
         posInicial = transform.position;
+        firePoint = firePoint.transform;
     }
 
     // Update is called once per frame
@@ -44,10 +49,25 @@ public class movimientoJugador : MonoBehaviour
 
         if (rb.velocity.x > 0) {
             this.transform.localScale = new Vector3(1, 1, 1);
+
+            if (!facinLeft)
+            {
+                facinRight = false;
+                facinLeft = true;
+                firePoint.transform.Rotate(0.0f, 180.0f, 0.0f);
+            }
+
             //controlAnim.SetFloat("speed", inputJoystick.x);
         } else if(rb.velocity.x < 0)
         {
             this.transform.localScale = new Vector3(-1, 1, 1);
+
+            if (!facinRight)
+            {
+                facinLeft = false;
+                facinRight = true;
+                firePoint.transform.Rotate(0.0f, 180.0f, 0.0f);
+            }
             //controlAnim.SetFloat("speed", inputJoystick.x);
         }
 

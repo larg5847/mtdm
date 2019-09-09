@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a5ff5fc5fe4ba141bb7cb82ede88b3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireBullet: 0.05
+  fireBullet: 0.5
   bullet: {fileID: 4225940077643952285, guid: c28d967a0ae51774b9cb3fb3d0d8fd63, type: 3}
   poolTam: 2
   firePoint: {fileID: 0}

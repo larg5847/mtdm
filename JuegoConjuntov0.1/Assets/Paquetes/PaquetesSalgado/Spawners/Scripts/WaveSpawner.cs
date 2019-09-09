@@ -14,7 +14,7 @@ public class WaveSpawner : MonoBehaviour
     public int poolTam = 5;
     //Posición para enemigo que no aparece en pantalla
     private Vector2 objectPoolPosition = new Vector2(-15, -25);
-    private float spawnXPosition = 1.0f;
+    private float spawnXPosition = 19.0f;
     //Tiempo desde la última aparición del enemigo
     public float tiempo = 0f;
     //Índice de enemigo
@@ -47,7 +47,7 @@ public class WaveSpawner : MonoBehaviour
         {
             tiempo = 0f;
 
-            float spawnYPosition = Random.Range(-5, 5);
+            float spawnYPosition = Random.Range(0, 9);
 
             
             enemies[j].transform.position = new Vector2(spawnXPosition, spawnYPosition); ;
