@@ -14,7 +14,8 @@ public class movimientoJugador : MonoBehaviour
     public Vector3 inputJoystick;
     public Transform firePoint;
 
-    private SpriteRenderer tSprite;
+    //Antes privado, ahora se utiliza cuando es atacado el dinosaurio
+    public SpriteRenderer tSprite;
     private Transform posicion;
     private Vector3 mov = new Vector3(0.0f,0.0f,0.0f);
 
@@ -33,7 +34,9 @@ public class movimientoJugador : MonoBehaviour
     void Start()
     {
         posicion = this.transform;
-        tSprite = GetComponent<SpriteRenderer>();
+        //Para parámetro privado
+        //tSprite = GetComponent<SpriteRenderer>();
+        tSprite.color = Color.HSVToRGB(0f, 0f, 1f);
         posInicial = transform.position;
         firePoint = firePoint.transform;
     }
@@ -146,7 +149,19 @@ public class movimientoJugador : MonoBehaviour
                 ControlJuego.instance.EndGame();
                 this.gameObject.SetActive(false);
                 //parentMyself.SetActive(false);
-            } else {
+            }
+
+            //se agregan las siguientes condiciones para el cambio de color del sprite debido a
+            //que el personaje es atacado
+            else if (intentos == 2) //solo else
+            {
+                tSprite.color = Color.HSVToRGB(0f,0.36f,1f);
+                transform.position = posInicial;
+            }
+
+            else if (intentos == 1)
+            {
+                tSprite.color = Color.HSVToRGB(0f,0.65f,0.95f);
                 transform.position = posInicial;
             }
         }

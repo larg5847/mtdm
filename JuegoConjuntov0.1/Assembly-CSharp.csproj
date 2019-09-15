@@ -91,8 +91,9 @@
     <Compile Include="Assets\Paquetes\PaquetesSalgado\powerUps\Scripts\PowerUpSpawner.cs" />
     <Compile Include="Assets\Paquetes\PaquetesSalgado\Proyectiles\Scripts\DestruyeProyectil.cs" />
     <Compile Include="Assets\Paquetes\PaquetesSalgado\Proyectiles\Scripts\hurtProyectil.cs" />
-    <Compile Include="Assets\Paquetes\PaquetesSalgado\Proyectiles\Scripts\LanzaProyectil.cs" />
-    <Compile Include="Assets\Paquetes\PaquetesSalgado\Proyectiles\Scripts\Proyectil.cs" />
+    <Compile Include="Assets\Paquetes\PaquetesSalgado\Proyectiles\Scripts\LanzaProyectilBomba.cs" />
+    <Compile Include="Assets\Paquetes\PaquetesSalgado\Proyectiles\Scripts\LanzaProyectilFuego.cs" />
+    <Compile Include="Assets\Paquetes\PaquetesSalgado\Proyectiles\Scripts\ProyectilBomba.cs" />
     <Compile Include="Assets\Paquetes\PaquetesSalgado\Proyectiles\Scripts\ProyectilFuego.cs" />
     <Compile Include="Assets\Paquetes\PaquetesSalgado\Spawners\Scripts\HurtboxPlayer.cs" />
     <Compile Include="Assets\Paquetes\PaquetesSalgado\Spawners\Scripts\MovimientoPlayer.cs" />
