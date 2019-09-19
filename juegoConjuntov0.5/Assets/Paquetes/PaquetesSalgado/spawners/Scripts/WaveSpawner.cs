@@ -11,7 +11,7 @@ public class WaveSpawner : MonoBehaviour
     //Lista de objetos
     List<GameObject> enemies;
     //Tamaño de lista de pool
-    public int poolTam = 5;
+    int poolTam = 4;
     //Posición para enemigo que no aparece en pantalla
     private Vector2 objectPoolPosition = new Vector2(-15, -25);
     private float spawnXPosition = 19.0f;
@@ -20,7 +20,7 @@ public class WaveSpawner : MonoBehaviour
     //Índice de enemigo
     public int j = 0;
     //ïndice de oleadas
-    public int k = 2;
+    int k = 10;
     //Total de objetos en escena
     public GameObject[] tEnemigos;
 
