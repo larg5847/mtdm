@@ -7,11 +7,13 @@ public class EnemigoAnim : MonoBehaviour
     public float speed = 1.0f;                  // Velocidad del jugador
     public float followRadius = 5.0f;           // Radio en el que empieza a seguir al jugador
     public float attackRadius = 1.0f;           // Radio en el que empieza a atacar al jugador
-    public int vida = 100;
+    int vida = 20;
 
     private EntityController controller;        // EntityController para controlar el movimiento mediante IA
     public Animator animator;                   // Controlador de las animaciones
     public GameObject player;                   // GameObject del jugador
+    public LanzaProyectilFuego lanza;
+    public Transform firePoint;
 
     private Vector2 targetPos;                  // La posicion objetivo actual
     private bool followingPlayer;               // Booleano para checar si se esta siguiendo al juador
@@ -42,14 +44,25 @@ public class EnemigoAnim : MonoBehaviour
         // Verifica que exista el objeto de control de IA
         EntityUtils.CheckForIAManger();
 
+        player = GameObject.FindGameObjectWithTag("Player");
+        lanza = GameObject.FindGameObjectWithTag("ProyectilEnem").GetComponent<LanzaProyectilFuego>();
+
+
+
         // Inicia checkeo de estado
         StartCoroutine(CheckGameState());
+
+
+
     }
 
     public void RecibirMadrazo(Collider2D col) {
-        if(col.tag == "Proyectil") {
+        if(col.tag == "hitboxJugador") {
+
+          
             vida -= 10;
-            if(vida == 0) {
+            Debug.Log("golpeado por robby "+ vida);
+            if (vida == 0) {
                 Morir();
             }
         }
@@ -57,6 +70,7 @@ public class EnemigoAnim : MonoBehaviour
 
     private void Morir() {
         Debug.Log("Mataste a un enemigo");
+        this.gameObject.SetActive(false);
     }
 
     // Courutina que checa el estado del juego
@@ -79,7 +93,7 @@ public class EnemigoAnim : MonoBehaviour
 
                 // Si estaba atacando se asegura que ahora este en idle
                 if(lastState == "AttackPlayer")
-                    animator.SetBool("atack", false);
+                    animator.SetBool("attack", false);
 
             }
 
@@ -160,18 +174,21 @@ public class EnemigoAnim : MonoBehaviour
         // Entra en un update constante
         while(true) {
             // Activa el bool del animator para atacar
-            animator.SetBool("atack", true);
+            animator.SetBool("attack", true);
+
+            lanza.dispara(firePoint);
+
             // Se espera tantito en lo que termina la animacion
             yield return new WaitForSeconds(0.25f);
             // Desactiva el bool del animator para atacar
-            animator.SetBool("atack", false);
+            animator.SetBool("attack", false);
 
             // Dependiendo de la posicion del jugador se asegura que este mirando en la direccion correcta
             if(player.transform.position.x > this.transform.position.x) {
-                this.transform.localScale = new Vector3(-1, 1, 1);
+                this.transform.localScale = new Vector3(-.5f, .5f, 1);
                 //sprRenderer.flipX = false;
             } else if (player.transform.position.x < this.transform.position.x) {
-                this.transform.localScale = new Vector3(1, 1, 1);
+                this.transform.localScale = new Vector3(.5f, .5f, 1);
                 //sprRenderer.flipX = true;
             }
 
@@ -215,10 +232,10 @@ public class EnemigoAnim : MonoBehaviour
 
         // Se asegura que este mirando en la direccion correcta
         if(vel > 0) {
-            this.transform.localScale = new Vector3(-1, 1, 1);
+            this.transform.localScale = new Vector3(-.5f, .5f, 1);
             //sprRenderer.flipX = false;
         } else if (vel < 0) {
-            this.transform.localScale = new Vector3(1, 1, 1);
+            this.transform.localScale = new Vector3(.5f, .5f, 1);
             //sprRenderer.flipX = true;
         }
 
