@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - hitboxEnemigo
+  - hurtboxJugador
+  - Enemigo
+  - IA Manager
+  - hitboxJugador
+  - ProyectilEnem
+  - colisionNivel
   layers:
   - Default
   - TransparentFX

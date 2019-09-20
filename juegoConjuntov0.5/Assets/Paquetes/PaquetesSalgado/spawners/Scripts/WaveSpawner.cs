@@ -47,7 +47,8 @@ public class WaveSpawner : MonoBehaviour
         {
             tiempo = 0f;
 
-            float spawnYPosition = Random.Range(0, 9);
+            //modifique este valor de 9 a 5
+            float spawnYPosition = Random.Range(0, 4.5f);
 
             
             enemies[j].transform.position = new Vector2(spawnXPosition, spawnYPosition); ;
