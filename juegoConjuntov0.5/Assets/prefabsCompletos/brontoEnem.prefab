@@ -165,7 +165,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 3ef8efe53d5a37640a8e2f34304fde6e, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -5067,6 +5067,7 @@ MonoBehaviour:
   player: {fileID: 0}
   lanza: {fileID: 0}
   firePoint: {fileID: 3038683044622967134}
+  state: 
 --- !u!114 &8718652782216328460
 MonoBehaviour:
   m_ObjectHideFlags: 0
