@@ -81,6 +81,8 @@ public class EnemigoAnim : MonoBehaviour
         playerDist = float.PositiveInfinity;
         state = "GoToObjective";
         this.gameObject.SetActive(false);
+
+        ControlJuego.instance.AumentarScore(1);
     }
 
     // Courutina que checa el estado del juego
