@@ -29,14 +29,6 @@ public class DestruyeProyectil : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "colisionNivel")
-        {
-            destruye();
-        }
-    }
-
     //Método que desactiva el objeto
     private void destruye()
     {
