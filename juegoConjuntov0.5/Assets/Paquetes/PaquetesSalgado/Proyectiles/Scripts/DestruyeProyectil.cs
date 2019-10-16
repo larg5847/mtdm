@@ -27,6 +27,12 @@ public class DestruyeProyectil : MonoBehaviour
             Debug.Log("Se colisionó con " + collision.gameObject.tag);
             destruye();
         }
+
+        else if (collision.gameObject.tag == "colisionProyectil")
+        {
+            Debug.Log("Se colisionó con " + collision.gameObject.tag);
+            destruye();
+        }
     }
 
     //Método que desactiva el objeto

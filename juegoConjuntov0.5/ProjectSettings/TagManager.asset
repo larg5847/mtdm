@@ -11,6 +11,9 @@ TagManager:
   - hitboxJugador
   - ProyectilEnem
   - colisionNivel
+  - hurtboxPlayer
+  - hitboxPlayer
+  - colisionProyectil
   layers:
   - Default
   - TransparentFX
