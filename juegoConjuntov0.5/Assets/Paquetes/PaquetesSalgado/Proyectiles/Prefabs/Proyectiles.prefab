@@ -46,8 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireBullet: 0.5
   bullet: {fileID: 6974299777729383550, guid: a93ecefe133dbcd4fad1017bc2fba78c, type: 3}
-  poolTam: 2
-  firePoint: {fileID: 0}
+  poolTam: 8
 --- !u!114 &8741020698666062125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5dba9b580cfdbf42b088666be2a3afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireBullet: 0.5
+  fireBullet: 0.7
   bullet: {fileID: 4225940077643952285, guid: c28d967a0ae51774b9cb3fb3d0d8fd63, type: 3}
   poolTam: 2
   firePoint: {fileID: 0}

@@ -13,7 +13,20 @@ public class EventoColision : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col) {
         // Manda a llamar el evento
-        if(OnTriggerEnter != null && col.gameObject.tag != "colisionProyectil")
+
+        if(this.tag == "hurtboxJugador")
+        {
+            if(col.gameObject.tag == "hitboxEnemigo")
             OnTriggerEnter.Invoke(col);
+        }
+
+        if (this.tag == "hurtboxEnemigo")
+        {
+            if (col.gameObject.tag == "hitboxJugador")
+                OnTriggerEnter.Invoke(col);
+        }
+
+        /*if(OnTriggerEnter != null && col.gameObject.tag != "colisionProyectil")
+            OnTriggerEnter.Invoke(col);*/
     }
 }

@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 8210091773467160889}
   m_Layer: 8
   m_Name: Hurtbox
-  m_TagString: hurtboxJugador
+  m_TagString: hurtboxEnemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5061,8 +5061,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  followRadius: 6.2
-  attackRadius: 4
+  followRadius: 5
+  attackRadius: 3.5
   animator: {fileID: 6234691150604409463}
   player: {fileID: 0}
   lanza: {fileID: 0}

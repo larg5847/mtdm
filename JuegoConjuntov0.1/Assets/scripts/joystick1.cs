@@ -2,69 +2,60 @@
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class joystick1 : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerDownHandler, IPointerUpHandler
+public class joystick1 : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {
 
-    public RectTransform baseJ;
-    public RectTransform joystick;
+    private Image jsContainer;
+    private Image joystick;
 
-    public float Horizontal = 0;
-    public float Vertical = 0;
+    public Vector3 InputDirection;
 
-
-    public float separacion;
-    Vector2 posicionPunto;
-
-    // Start is called before the first frame update
     void Start()
     {
-        
+
+        jsContainer = this.GetComponent<Image>();
+        joystick = transform.GetChild(0).GetComponent<Image>(); //this command is used because there is only one child in hierarchy
+        InputDirection = Vector3.zero;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnDrag(PointerEventData ped)
     {
-        
+        Vector2 position = Vector2.zero;
+
+        //To get InputDirection
+        RectTransformUtility.ScreenPointToLocalPointInRectangle
+                (jsContainer.rectTransform,
+                ped.position,
+                ped.pressEventCamera,
+                out position);
+
+        position.x = (position.x / jsContainer.rectTransform.sizeDelta.x);
+        position.y = (position.y / jsContainer.rectTransform.sizeDelta.y);
+
+        float x = (jsContainer.rectTransform.pivot.x == 1f) ? position.x * 2 + 1 : position.x * 2 - 1;
+        float y = (jsContainer.rectTransform.pivot.y == 1f) ? position.y * 2 + 1 : position.y * 2 - 1;
+
+        InputDirection = new Vector3(x, y, 0);
+        InputDirection = (InputDirection.magnitude > 1) ? InputDirection.normalized : InputDirection;
+
+        //to define the area in which joystick can move around
+        joystick.rectTransform.anchoredPosition = new Vector3(InputDirection.x * (jsContainer.rectTransform.sizeDelta.x / 3)
+                                                               , InputDirection.y * (jsContainer.rectTransform.sizeDelta.y) / 3);
+
+        Debug.Log(joystick.rectTransform.anchoredPosition);
+
     }
 
-    private void FixedUpdate()
+    public void OnPointerDown(PointerEventData ped)
     {
-        
+
+        OnDrag(ped);
     }
 
-    void moverJugador(Vector2 direccion)
+    public void OnPointerUp(PointerEventData ped)
     {
-        
-    }
 
-
-
-    /// <summary>
-    /// interfaces de touch
-    /// </summary>
-    public void OnBeginDrag(PointerEventData eventData)
-    {
-        posicionPunto = new Vector2((eventData.position.x - baseJ.position.x) / ((baseJ.rect.size.x - joystick.rect.size.x) / 2), (eventData.position.y - baseJ.position.y) / ((baseJ.rect.size.y - joystick.rect.size.y) / 2));
-
-    }
-
-    public void OnDrag(PointerEventData eventData)
-    {
-        
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        
-    }
-
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        
+        InputDirection = Vector3.zero;
+        joystick.rectTransform.anchoredPosition = Vector3.zero;
     }
 }

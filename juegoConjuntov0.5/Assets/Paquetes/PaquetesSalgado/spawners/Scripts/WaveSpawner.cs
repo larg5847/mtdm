@@ -5,13 +5,13 @@ using UnityEngine;
 public class WaveSpawner : MonoBehaviour
 {
     //Tiempo de aparición entre enemigos
-    public float spawnRate = 3f;
+    public float spawnRate = 2f;    //ANTERIOR == 3
     //Objeto para hacer el pool
     public GameObject enemy;
     //Lista de objetos
     List<GameObject> enemies;
     //Tamaño de lista de pool
-    int poolTam = 4;
+    int poolTam = 8;  //ANTERIOR == 4
     //Posición para enemigo que no aparece en pantalla
     private Vector2 objectPoolPosition = new Vector2(-15, -25);
     private float spawnXPosition = 19.0f;
@@ -20,7 +20,7 @@ public class WaveSpawner : MonoBehaviour
     //Índice de enemigo
     public int j = 0;
     //ïndice de oleadas
-    int k = 10;
+    int k = 50;
     //Total de objetos en escena
     public GameObject[] tEnemigos;
 

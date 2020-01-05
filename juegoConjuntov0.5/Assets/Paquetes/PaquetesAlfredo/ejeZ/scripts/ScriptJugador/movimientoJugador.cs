@@ -5,7 +5,7 @@ using UnityEngine;
 public class movimientoJugador : MonoBehaviour
 {
 
-    private float velocidad = 2.0f;  //4 - 6 -8f
+    private float velocidad = 4.0f;  //4 - 6 -8f
 
     public int intentos = 3;
     public Animator controlAnim;
@@ -156,13 +156,13 @@ public class movimientoJugador : MonoBehaviour
             else if (intentos == 2) //solo else
             {
                 tSprite.color = Color.HSVToRGB(0f,0.36f,1f);
-                transform.position = posInicial;
+                //transform.position = posInicial;
             }
 
             else if (intentos == 1)
             {
                 tSprite.color = Color.HSVToRGB(0f,0.65f,0.95f);
-                transform.position = posInicial;
+                //transform.position = posInicial;
             }
         }
     }

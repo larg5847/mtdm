@@ -6,13 +6,13 @@ using UnityEditor;
 [CustomEditor(typeof(Joystick), true)]
 public class JoystickEditor : Editor
 {
-    private SerializedProperty handleRange;
-    private SerializedProperty deadZone;
-    private SerializedProperty axisOptions;
-    private SerializedProperty snapX;
-    private SerializedProperty snapY;
-    protected SerializedProperty background;
-    private SerializedProperty handle;
+    public SerializedProperty handleRange;
+    public SerializedProperty deadZone;
+    public SerializedProperty axisOptions;
+    public SerializedProperty snapX;
+    public SerializedProperty snapY;
+    public SerializedProperty background;
+    public SerializedProperty handle;
 
     protected Vector2 center = new Vector2(0.5f, 0.5f);
 

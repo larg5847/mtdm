@@ -219,7 +219,7 @@ public class EnemigoAnim : MonoBehaviour
             }
 
             // Espera 0.5 segundos antes de volver a atacar
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.9f);   //estaba en 0.5f
         }
     }
 
