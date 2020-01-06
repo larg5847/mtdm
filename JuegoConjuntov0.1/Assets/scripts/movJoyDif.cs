@@ -15,6 +15,7 @@ public class movJoyDif : Personajes
         posicionP = this.transform.position;
         vidaP = 3;
         velocidadP = 5.0f;
+        Debug.Log("Personaje-> Vida: " + vidaP + " Vel: " + velocidadP);
     }
 
 
