@@ -15,14 +15,17 @@ public class Enemigos : Personajes
                 vidaP = 4;
                 velocidadP = 3.0f;
                 break;
+
+            default:
+                break;
         }
 
         Debug.Log("Enemigo-> Vida: " + vidaP + " Velocidad : " + velocidadP);
     }
 
     public Enemigos(int vida, float velocidad) : base(vida, velocidad)
-    { 
-
+    {
+        
     }
 
     public string _tipoDino

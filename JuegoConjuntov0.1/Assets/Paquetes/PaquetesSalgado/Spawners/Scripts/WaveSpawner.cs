@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaveSpawner : MonoBehaviour
+public class WaveSpawner : Personajes
 {
     //Tiempo de aparición entre enemigos
     public float spawnRate = 3f;
@@ -21,6 +21,8 @@ public class WaveSpawner : MonoBehaviour
     public int j = 0;
     //ïndice de oleadas
     public int k = 2;
+    //Selector de posición de spawn en escena
+    public int posSel = 1;
     //Total de objetos en escena
     public GameObject[] tEnemigos;
 
@@ -47,7 +49,30 @@ public class WaveSpawner : MonoBehaviour
         {
             tiempo = 0f;
 
-            float spawnYPosition = Random.Range(0, 9);
+            //Se selecciona en que posición se muestra en escena
+            
+            switch (posSel)
+            {
+                case 1:
+                    posicionP = new Vector3(19, -8, 0);
+                    break;
+                case 2:
+                    posicionP = new Vector3(23, -4, 0);
+                    break;
+                case 3:
+                    posicionP = new Vector3(19, 0, 0);
+                    break;
+                default:
+                    posicionP = new Vector3(19, 0, 0);
+                    break;
+                    
+            }
+
+            float spawnYPosition = posicionP.y;
+            spawnXPosition = posicionP.x;
+
+            Debug.Log("Posicion: " + posicionP);
+            //float spawnYPosition = Random.Range(0, 9);
 
             
             enemies[j].transform.position = new Vector2(spawnXPosition, spawnYPosition); ;
@@ -55,6 +80,9 @@ public class WaveSpawner : MonoBehaviour
             enemies[j].SetActive(true);
                        
             j++;
+            posSel++;
+            if (posSel > 3)
+                posSel = 1;
         }
 
         else if (tiempo > spawnRate)
