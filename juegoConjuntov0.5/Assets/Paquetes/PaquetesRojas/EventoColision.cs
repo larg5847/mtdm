@@ -26,6 +26,12 @@ public class EventoColision : MonoBehaviour
                 OnTriggerEnter.Invoke(col);
         }
 
+        if (this.tag == "hurtboxJugador")
+        {
+            if (col.gameObject.tag == "PowerUp")
+                OnTriggerEnter.Invoke(col);
+        }
+
         /*if(OnTriggerEnter != null && col.gameObject.tag != "colisionProyectil")
             OnTriggerEnter.Invoke(col);*/
     }

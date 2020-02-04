@@ -8,12 +8,14 @@ public class movJoyDif : Personajes
     public Camera thisC;
     //private float xmin, xmax, ymin, ymax;
     Vector3 direction;
+    public SpriteRenderer tSprite;
 
 
     void Awake()
     {
+        tSprite.color = Color.HSVToRGB(0f, 0.65f, 0.95f);
         posicionP = this.transform.position;
-        vidaP = 3;
+        vidaP = 1;
         velocidadP = 5.0f;
         Debug.Log("Personaje-> Vida: " + vidaP + " Vel: " + velocidadP);
     }
@@ -33,10 +35,50 @@ public class movJoyDif : Personajes
             //posicionP = new Vector3(Mathf.Clamp(transform.position.x, xmin, xmax), Mathf.Clamp(transform.position.y, ymin, ymax), 0f);//to restric movement of player
             //Debug.Log("se esta sumando?: " + posicionP);
             this.transform.position = posicionP;
-
-            
         }
     }
+
+    //Fución que es llamada por la clase EventoColision
+    public void controlVida(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "hitboxEnemigo" || collider.gameObject.tag == "PowerUp")
+        {
+            if (collider.gameObject.tag == "hitboxEnemigo")
+                vidaP--;
+
+            else
+            {
+                if (vidaP < 3)
+                    vidaP++;
+            }
+
+            Debug.Log(vidaP);
+            if (vidaP == 0)
+            {
+                //ControlJuego.instance.EndGame();
+                this.gameObject.SetActive(false);
+                //parentMyself.SetActive(false);
+            }
+
+            //se agregan las siguientes condiciones para el cambio de color del sprite debido a
+            //que el personaje es atacado
+            else if (vidaP == 2) //solo else
+            {
+                tSprite.color = Color.HSVToRGB(0f, 0.36f, 1f);
+            }
+
+            else if (vidaP == 1)
+            {
+                tSprite.color = Color.HSVToRGB(0f, 0.65f, 0.95f);
+            }
+
+            else
+            {
+                tSprite.color = Color.HSVToRGB(0f, 0f, 1f);
+            }
+        }
+    }
+
     /// <summary>
     /// funcion start ayuda a cargatr datos al inicio del nivel, no al inicio del juego como awakw
     /// /// </summary>

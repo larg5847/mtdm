@@ -12,8 +12,16 @@ public class EventoColision : MonoBehaviour
     public EventCollider2D OnTriggerEnter;
 
     void OnTriggerEnter2D(Collider2D col) {
-        // Manda a llamar el evento
-        if(OnTriggerEnter != null)
-            OnTriggerEnter.Invoke(col);
+
+        //Se manda a llamar el evento cuando el collider del hurtboxJugador colisionó
+        //con el del PowerUp
+        if(this.tag == "hurtboxJugador")
+        {
+            if (col.gameObject.tag == "PowerUp")
+            {
+                OnTriggerEnter.Invoke(col);
+            }
+                
+        }
     }
 }

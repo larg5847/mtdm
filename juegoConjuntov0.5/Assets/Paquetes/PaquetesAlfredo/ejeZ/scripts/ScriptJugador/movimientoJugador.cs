@@ -137,12 +137,20 @@ public class movimientoJugador : MonoBehaviour
 
     public void bajarVida(Collider2D collider)
     {
-        if (collider.gameObject.tag == "hitboxEnemigo")
+        if (collider.gameObject.tag == "hitboxEnemigo" || collider.gameObject.tag == "PowerUp")
         {
             //vida -= 10;
             //Debug.Log(vida);
 
-            intentos --;
+            if (collider.gameObject.tag == "hitboxEnemigo")
+                intentos--;
+
+            else
+            {
+                if (intentos < 3)
+                    intentos++;
+            }
+                
             Debug.Log(intentos);
             if (intentos == 0)//(vida <= 0)
             {
@@ -163,6 +171,11 @@ public class movimientoJugador : MonoBehaviour
             {
                 tSprite.color = Color.HSVToRGB(0f,0.65f,0.95f);
                 //transform.position = posInicial;
+            }
+
+            else
+            {
+                tSprite.color = Color.HSVToRGB(0f, 0f, 1f);
             }
         }
     }
